@@ -1,0 +1,323 @@
+// Terminal window styles with improved visual hierarchy
+.terminal-window {
+  max-width: 900px;
+  margin: 2rem auto;
+  background-color: #0a0a0a;
+  border: 2px solid #33ff33;
+  border-radius: 6px;
+  box-shadow: 0 0 20px rgba(51, 255, 51, 0.1);
+  overflow: hidden;
+  font-family: 'Courier New', monospace;
+  color: #e0e0e0;
+  
+  .terminal-header {
+    background: linear-gradient(to right, #1a1a1a, #2a2a2a);
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #33ff33;
+    
+    .terminal-buttons {
+      display: flex;
+      gap: 8px;
+      
+      .terminal-button {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        
+        &.close { background-color: #ff5f56; }
+        &.minimize { background-color: #ffbd2e; }
+        &.maximize { background-color: #27c93f; }
+      }
+    }
+    
+    .terminal-title {
+      flex-grow: 1;
+      text-align: center;
+      color: #888;
+      font-size: 0.8rem;
+      font-family: 'Press Start 2P', monospace;
+      text-shadow: 0 0 5px rgba(51, 255, 51, 0.3);
+      letter-spacing: 1px;
+    }
+  }
+  
+  .terminal-body {
+    padding: 1.5rem;
+    min-height: 600px;
+    background: #0f0f0f;
+    background-image: 
+      linear-gradient(rgba(20, 20, 20, 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(20, 20, 20, 0.5) 1px, transparent 1px);
+    background-size: 20px 20px;
+    line-height: 1.6;
+    position: relative;
+    overflow-y: auto;
+    
+    /* Custom scrollbar */
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: #1a1a1a;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: #33ff33;
+      border-radius: 4px;
+    }
+  }
+  
+  .terminal-line {
+    margin-bottom: 1.2rem;
+    position: relative;
+    
+    .prompt {
+      color: #33ff33;
+      font-weight: bold;
+      margin-right: 0.8rem;
+      user-select: none;
+      text-shadow: 0 0 5px rgba(51, 255, 51, 0.3);
+    }
+    
+    .command {
+      color: #ffffff;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+    
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      height: 1.2em;
+      background-color: #33ff33;
+      margin-left: 4px;
+      animation: blink 1s step-end infinite;
+      vertical-align: middle;
+      box-shadow: 0 0 5px rgba(51, 255, 51, 0.5);
+    }
+  }
+  
+  .about-content {
+    .about-section {
+      margin-bottom: 2.5rem;
+      animation: fadeIn 0.5s ease-out;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+      
+      .section-title {
+        color: #33ff33;
+        font-family: 'Press Start 2P', monospace;
+        font-size: 0.8rem;
+        margin: 1.8rem 0 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        position: relative;
+        display: inline-block;
+        text-shadow: 0 0 5px rgba(51, 255, 51, 0.3);
+        
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -8px;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background: linear-gradient(90deg, #33ff33, transparent);
+          border-radius: 2px;
+        }
+      }
+      
+      p {
+        color: #e0e0e0;
+        line-height: 1.7;
+        margin-bottom: 1.2rem;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+        
+        .highlight {
+          color: #ffcc00;
+          font-weight: bold;
+          text-shadow: 0 0 5px rgba(255, 204, 0, 0.3);
+        }
+      }
+    }
+    
+    .experience-item {
+      background: rgba(30, 30, 30, 0.7);
+      border-left: 3px solid #33ff33;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 0 4px 4px 0;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      
+      &:hover {
+        transform: translateX(5px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        background: rgba(40, 40, 40, 0.8);
+      }
+      
+      .job-title {
+        color: #4d9eff;
+        font-weight: bold;
+        font-size: 1.1rem;
+        margin-bottom: 0.4rem;
+        text-shadow: 0 0 5px rgba(77, 158, 255, 0.2);
+      }
+      
+      .company {
+        color: #888;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+        font-style: italic;
+        display: flex;
+        align-items: center;
+        
+        &::before {
+          content: 'at ';
+          color: #666;
+          font-style: normal;
+          margin-right: 0.3rem;
+        }
+      }
+      
+      .job-description {
+        margin: 1rem 0 0 0.5rem;
+        padding: 0;
+        
+        li {
+          margin-bottom: 0.6rem;
+          position: relative;
+          padding-left: 1.5rem;
+          color: #ccc;
+          
+          &::before {
+            content: '▹';
+            color: #33ff33;
+            position: absolute;
+            left: 0;
+            font-size: 1.1rem;
+            line-height: 1;
+          }
+        }
+      }
+    }
+    
+    .education-item {
+      background: rgba(30, 30, 30, 0.7);
+      border: 1px solid #333;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #33ff33, transparent);
+      }
+      
+      &:hover {
+        border-color: #33ff33;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(51, 255, 51, 0.1);
+        
+        .degree {
+          color: #4d9eff;
+        }
+      }
+      
+      .degree {
+        color: #4d9eff;
+        font-weight: bold;
+        font-size: 1.1rem;
+        margin-bottom: 0.4rem;
+        transition: color 0.3s ease;
+      }
+      
+      .institution {
+        color: #888;
+        font-size: 0.95rem;
+        margin-bottom: 0.4rem;
+        font-weight: 500;
+      }
+      
+      .period {
+        display: inline-block;
+        background: rgba(51, 255, 51, 0.1);
+        color: #33ff33;
+        padding: 0.2rem 0.6rem;
+        border-radius: 12px;
+        font-size: 0.8rem;
+        margin-bottom: 0.8rem;
+        border: 1px solid rgba(51, 255, 51, 0.2);
+      }
+      
+      .details {
+        color: #aaa;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-top: 0.5rem;
+        padding-left: 0.5rem;
+        border-left: 2px solid #333;
+        
+        &::before {
+          content: '// ';
+          color: #666;
+        }
+      }
+    }
+  }
+  
+  // Animations
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  // Responsive design
+  @media (max-width: 768px) {
+    margin: 1rem;
+    
+    .terminal-body {
+      padding: 1rem;
+    }
+    
+    .about-section {
+      .section-title {
+        font-size: 0.7rem !important;
+      }
+      
+      .experience-item, .education-item {
+        padding: 1.2rem !important;
+      }
+      
+      .job-title, .degree {
+        font-size: 1rem !important;
+      }
+      
+      .job-description li {
+        font-size: 0.95rem;
+      }
+    }
+  }
+}
+
+// Import fonts
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
