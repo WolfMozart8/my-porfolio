@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TerminalComponent } from '../terminal/terminal.component';
 
 type Experience = {
   title: string;
@@ -18,7 +19,7 @@ type Education = {
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TerminalComponent],
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
 })
