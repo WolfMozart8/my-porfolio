@@ -1,1 +1,125 @@
 /* You can add global styles to this file, and also import other style files */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+TERMINAL
+*/
+.terminal-window {
+  // max-width: 900px;
+  background-color: #0a0a0a;
+  border: 2px solid #33ff33;
+  border-radius: 6px;
+  box-shadow: 0 0 20px rgba(51, 255, 51, 0.1);
+  overflow: hidden;
+  font-family: "Courier New", monospace;
+  color: #e0e0e0;
+
+  .terminal-header {
+    background: linear-gradient(to right, #1a1a1a, #2a2a2a);
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #33ff33;
+
+    .terminal-buttons {
+      display: flex;
+      gap: 8px;
+
+      .terminal-button {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+
+        &.close {
+          background-color: #ff5f56;
+        }
+        &.minimize {
+          background-color: #ffbd2e;
+        }
+        &.maximize {
+          background-color: #27c93f;
+        }
+      }
+    }
+
+    .terminal-title {
+      flex-grow: 1;
+      text-align: center;
+      color: #888;
+      font-size: 0.8rem;
+      font-family: "Press Start 2P", monospace;
+      text-shadow: 0 0 5px rgba(51, 255, 51, 0.3);
+      letter-spacing: 1px;
+    }
+  }
+
+  .terminal-body {
+    padding: 1.5rem;
+    min-height: 600px;
+    background: #0f0f0f;
+    background-image: linear-gradient(
+        rgba(20, 20, 20, 0.5) 1px,
+        transparent 1px
+      ),
+      linear-gradient(90deg, rgba(20, 20, 20, 0.5) 1px, transparent 1px);
+    background-size: 20px 20px;
+    line-height: 1.6;
+    position: relative;
+    overflow-y: auto;
+
+    /* Custom scrollbar */
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #1a1a1a;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #33ff33;
+      border-radius: 4px;
+    }
+  }
+
+  .terminal-line {
+    margin-bottom: 1.2rem;
+    position: relative;
+
+    .prompt {
+      color: #33ff33;
+      font-weight: bold;
+      margin-right: 0.8rem;
+      user-select: none;
+      text-shadow: 0 0 5px rgba(51, 255, 51, 0.3);
+    }
+
+    .command {
+      color: #ffffff;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      height: 1.2em;
+      background-color: #33ff33;
+      margin-left: 4px;
+      animation: blink 1s step-end infinite;
+      vertical-align: middle;
+      box-shadow: 0 0 5px rgba(51, 255, 51, 0.5);
+    }
+  }
+}
