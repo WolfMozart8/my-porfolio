@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TerminalComponent } from '../terminal/terminal.component';
 
 interface Project {
   name: string;
@@ -13,7 +14,7 @@ interface Project {
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TerminalComponent],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })

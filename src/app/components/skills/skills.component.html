@@ -1,81 +1,68 @@
-<div class="terminal-window">
-  <!-- Terminal Header -->
-  <div class="terminal-header">
-    <div class="terminal-buttons">
-      <div class="terminal-button close"></div>
-      <div class="terminal-button minimize"></div>
-      <div class="terminal-button maximize"></div>
-    </div>
-    <div class="terminal-title">skills.exe</div>
+<app-terminal title="skills.exe">
+  <!-- Terminal Loading Animation -->
+  <div class="terminal-line" *ngIf="!showTerminalOutput">
+    <span class="prompt">></span>
+    <span class="command">loading skills matrix</span>
+    <span class="cursor"></span>
+    <pre class="terminal-output">{{ terminalOutput }}</pre>
   </div>
   
-  <!-- Terminal Body -->
-  <div class="terminal-body">
-    <!-- Terminal Loading Animation -->
-    <div class="terminal-line" *ngIf="!showTerminalOutput">
-      <span class="prompt">></span>
-      <span class="command">loading skills matrix</span>
-      <span class="cursor"></span>
-      <pre class="terminal-output">{{ terminalOutput }}</pre>
+  <!-- Skills Content -->
+  <div class="skills-content" *ngIf="showTerminalOutput">
+    <!-- Category Navigation -->
+    <div class="category-nav">
+      <button 
+        *ngFor="let category of skillCategories"
+        [class.active]="activeCategory === category.name"
+        (click)="setActiveCategory(category.name)"
+        class="category-button"
+      >
+        <i class="fas {{ category.icon }}"></i>
+        {{ category.name | titlecase }}
+      </button>
     </div>
     
-    <!-- Skills Content -->
-    <div class="skills-content" *ngIf="showTerminalOutput">
-      <!-- Category Navigation -->
-      <div class="category-nav">
-        <button 
-          *ngFor="let category of skillCategories"
-          [class.active]="activeCategory === category.name"
-          (click)="setActiveCategory(category.name)"
-          class="category-button"
-        >
-          <i class="fas {{ category.icon }}"></i>
-          {{ category.name | titlecase }}
-        </button>
-      </div>
-      
-      <!-- Skills Grid -->
-      <div class="skills-grid">
-        <div class="skill-card" *ngFor="let skill of getActiveSkills()">
-          <div class="skill-header">
-            <i *ngIf="skill.icon" class="{{ skill.icon }}"></i>
-            <h3 class="skill-name">{{ skill.name }}</h3>
-            <span class="skill-level {{ getSkillLevelClass(skill.level) }}">
-              {{ getSkillLevelClass(skill.level) | titlecase }}
-            </span>
-          </div>
-          
-          <!-- Progress Bar -->
-          <div class="skill-progress">
-            <div 
-              class="progress-bar" 
-              [style.width.%]="skill.level"
-              [ngClass]="getSkillLevelClass(skill.level)"
-            ></div>
-            <span class="skill-percentage">{{ skill.level }}%</span>
-          </div>
-          
-          <!-- Skill Description -->
-          <div class="skill-description">
-            <div class="skill-tag" *ngFor="let i of [1, 2, 3]" [ngClass]="getRandomTagClass()">
-              <i class="fas fa-tag"></i>
-              <span>{{ getRandomSkillTag() }}</span>
-            </div>
+    <!-- Skills Grid -->
+    <div class="skills-grid">
+      <div class="skill-card" *ngFor="let skill of getActiveSkills()">
+        <div class="skill-header">
+          <i *ngIf="skill.icon" class="{{ skill.icon }}"></i>
+          <h3 class="skill-name">{{ skill.name }}</h3>
+          <span class="skill-level {{ getSkillLevelClass(skill.level) }}">
+            {{ getSkillLevelClass(skill.level) | titlecase }}
+          </span>
+        </div>
+        
+        <!-- Progress Bar -->
+        <div class="skill-progress">
+          <div 
+            class="progress-bar" 
+            [style.width.%]="skill.level"
+            [ngClass]="getSkillLevelClass(skill.level)"
+          ></div>
+          <span class="skill-percentage">{{ skill.level }}%</span>
+        </div>
+        
+        <!-- Skill Description -->
+        <div class="skill-description">
+          <div class="skill-tag" *ngFor="let i of [1, 2, 3]" [ngClass]="getRandomTagClass()">
+            <i class="fas fa-tag"></i>
+            <span>{{ getRandomSkillTag() }}</span>
           </div>
         </div>
       </div>
-      
-      <!-- Terminal Footer -->
-      <div class="terminal-footer">
-        <div class="terminal-line">
-          <span class="prompt">></span>
-          <span class="command">skills {{ activeCategory }} --level=all</span>
-          <span class="cursor"></span>
-        </div>
-        <div class="terminal-line">
-          <span class="output">Displaying {{ getActiveSkills().length }} {{ activeCategory }} skills</span>
-        </div>
+    </div>
+    
+    <!-- Terminal Footer -->
+    <div class="terminal-footer">
+      <div class="terminal-line">
+        <span class="prompt">></span>
+        <span class="command">skills {{ activeCategory }} --level=all</span>
+        <span class="cursor"></span>
+      </div>
+      <div class="terminal-line">
+        <span class="output">Displaying {{ getActiveSkills().length }} {{ activeCategory }} skills</span>
       </div>
     </div>
   </div>
-</div>
+</app-terminal>

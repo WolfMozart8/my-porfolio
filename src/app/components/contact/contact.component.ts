@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { TerminalComponent } from '../terminal/terminal.component';
 
 interface SocialLink {
   name: string;
@@ -12,7 +13,7 @@ interface SocialLink {
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, TerminalComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
