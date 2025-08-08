@@ -1,0 +1,63 @@
+{
+  "projects": [
+    {
+      "id": "3d-portfolio",
+      "en": {
+        "name": "3D Portfolio",
+        "description": "A modern 3D portfolio website built with Three.js and Angular, featuring interactive 3D models and animations."
+      },
+      "es": {
+        "name": "Portafolio 3D",
+        "description": "Un sitio web de portafolio 3D moderno construido con Three.js y Angular, que incluye modelos 3D interactivos y animaciones."
+      },
+      "technologies": ["Angular", "Three.js", "TypeScript", "SCSS"],
+      "github": "https://github.com/yourusername/3d-portfolio",
+      "demo": "https://yourusername.github.io/3d-portfolio",
+      "image": "assets/images/projects/3d-portfolio-preview.jpg"
+    },
+    {
+      "id": "ecommerce-platform",
+      "en": {
+        "name": "E-commerce Platform",
+        "description": "A full-stack e-commerce platform with user authentication, product catalog, and payment integration."
+      },
+      "es": {
+        "name": "Plataforma de Comercio Electrónico",
+        "description": "Una plataforma de comercio electrónico full-stack con autenticación de usuarios, catálogo de productos e integración de pagos."
+      },
+      "technologies": ["Node.js", "Express", "MongoDB", "Angular", "Stripe"],
+      "github": "https://github.com/yourusername/ecommerce-platform",
+      "image": "assets/images/projects/ecommerce-preview.png"
+    },
+    {
+      "id": "task-management-app",
+      "en": {
+        "name": "Task Management App",
+        "description": "A collaborative task management application with real-time updates and team collaboration features."
+      },
+      "es": {
+        "name": "Aplicación de Gestión de Tareas",
+        "description": "Una aplicación colaborativa de gestión de tareas con actualizaciones en tiempo real y funciones de trabajo en equipo."
+      },
+      "technologies": ["React", "Firebase", "Redux", "Material-UI"],
+      "github": "https://github.com/yourusername/task-management-app",
+      "demo": "https://taskapp.yourdomain.com",
+      "image": "assets/images/projects/task-manager-preview.png"
+    },
+    {
+      "id": "weather-dashboard",
+      "en": {
+        "name": "Weather Dashboard",
+        "description": "A weather application that displays current weather and forecast using a weather API."
+      },
+      "es": {
+        "name": "Panel del Tiempo",
+        "description": "Una aplicación meteorológica que muestra el clima actual y el pronóstico utilizando una API del tiempo."
+      },
+      "technologies": ["JavaScript", "HTML5", "CSS3", "OpenWeather API"],
+      "github": "https://github.com/yourusername/weather-dashboard",
+      "demo": "https://weather.yourdomain.com",
+      "image": "assets/images/projects/weather-dashboard-preview.png"
+    }
+  ]
+}

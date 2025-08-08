@@ -19,11 +19,13 @@
   background: rgba(30, 30, 30, 0.7);
   border: 1px solid rgba(51, 255, 51, 0.2);
   border-radius: 4px;
-  padding: 1.5rem;
+  padding: 0;
   transition: all 0.3s ease;
   backdrop-filter: blur(5px);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   
   &::before {
     content: '';
@@ -47,10 +49,44 @@
     }
   }
   
+  .project-image-container {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(51, 255, 51, 0.2);
+    
+    .project-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      filter: grayscale(30%) contrast(110%);
+    }
+    
+    .project-image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0.3) 100%
+      );
+      pointer-events: none;
+    }
+    
+    &:hover .project-image {
+      transform: scale(1.05);
+    }
+  }
+  
   .project-header {
     display: flex;
     align-items: center;
-    margin-bottom: 1.2rem;
+    margin: 1.2rem 1.5rem;
     position: relative;
     z-index: 1;
     
@@ -89,6 +125,7 @@
   }
   
   .project-description {
+    padding: 0 1.5rem;
     color: #b0b0b0;
     font-size: 0.9rem;
     line-height: 1.6;
@@ -100,6 +137,7 @@
   }
   
   .project-tech {
+    padding: 0 1.5rem 1.5rem;
     display: flex;
     flex-wrap: wrap;
     gap: 0.6rem;

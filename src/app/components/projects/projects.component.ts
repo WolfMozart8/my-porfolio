@@ -1,14 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TerminalComponent } from '../terminal/terminal.component';
+import { LanguageService } from '../../services/language.service';
+import { HttpClient } from '@angular/common/http';
+import { Subscription } from 'rxjs';
 
 interface Project {
+  id: string;
+  en: {
+    name: string;
+    description: string;
+  };
+  es: {
+    name: string;
+    description: string;
+  };
+  technologies: string[];
+  github?: string;
+  demo?: string;
+  image?: string;
+}
+
+interface ProjectDisplay {
   name: string;
   description: string;
   technologies: string[];
   github?: string;
   demo?: string;
   image?: string;
+}
+
+interface ProjectsData {
+  projects: Project[];
 }
 
 @Component({
@@ -18,38 +41,53 @@ interface Project {
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
-export class ProjectsComponent implements OnInit {
-  projects: Project[] = [
-    {
-      name: '3D Portfolio',
-      description: 'A modern 3D portfolio website built with Three.js and Angular, featuring interactive 3D models and animations.',
-      technologies: ['Angular', 'Three.js', 'TypeScript', 'SCSS'],
-      github: 'https://github.com/yourusername/3d-portfolio',
-      demo: 'https://yourusername.github.io/3d-portfolio'
-    },
-    {
-      name: 'E-commerce Platform',
-      description: 'A full-stack e-commerce platform with user authentication, product catalog, and payment integration.',
-      technologies: ['Node.js', 'Express', 'MongoDB', 'Angular', 'Stripe'],
-      github: 'https://github.com/yourusername/ecommerce-platform'
-    },
-    {
-      name: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates and team collaboration features.',
-      technologies: ['React', 'Firebase', 'Redux', 'Material-UI'],
-      github: 'https://github.com/yourusername/task-management-app',
-      demo: 'https://taskapp.yourdomain.com'
-    },
-    {
-      name: 'Weather Dashboard',
-      description: 'A weather application that displays current weather and forecast using a weather API.',
-      technologies: ['JavaScript', 'HTML5', 'CSS3', 'OpenWeather API'],
-      github: 'https://github.com/yourusername/weather-dashboard',
-      demo: 'https://weather.yourdomain.com'
-    }
-  ];
+export class ProjectsComponent implements OnInit, OnDestroy {
+  projects: ProjectDisplay[] = [];
+  private languageSubscription: Subscription;
+  private projectsData: Project[] = [];
+
+  constructor(
+    private languageService: LanguageService,
+    private http: HttpClient
+  ) {
+    this.languageSubscription = this.languageService.currentLanguage$.subscribe(() => {
+      this.updateProjectsLanguage();
+    });
+  }
 
   ngOnInit(): void {
-    // You can add any initialization logic here
+    this.loadProjects();
+  }
+
+  ngOnDestroy(): void {
+    if (this.languageSubscription) {
+      this.languageSubscription.unsubscribe();
+    }
+  }
+
+  private loadProjects(): void {
+    this.http.get<ProjectsData>('assets/data/projects.json').subscribe({
+      next: (data) => {
+        this.projectsData = data.projects;
+        this.updateProjectsLanguage();
+      },
+      error: (error) => {
+        console.error('Error loading projects:', error);
+      }
+    });
+  }
+
+  private updateProjectsLanguage(): void {
+    if (!this.projectsData) return;
+    
+    const currentLang = this.languageService.getCurrentLanguage();
+    this.projects = this.projectsData.map(project => ({
+      name: project[currentLang].name,
+      description: project[currentLang].description,
+      technologies: [...project.technologies],
+      github: project.github,
+      demo: project.demo,
+      image: project.image
+    }));
   }
 }

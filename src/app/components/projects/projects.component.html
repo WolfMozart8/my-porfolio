@@ -7,14 +7,18 @@
     <div class="projects-grid">
       <!-- Project Card 1 -->
       <div class="project-card" *ngFor="let project of projects">
+        <div class="project-image-container" *ngIf="project.image">
+          <img [src]="project.image" [alt]="project.name + ' preview'" class="project-image" loading="lazy">
+          <div class="project-image-overlay"></div>
+        </div>
         <div class="project-header">
           <i class="fas fa-folder"></i>
           <h3 class="project-name">{{ project.name }}</h3>
           <div class="project-links">
-            <a *ngIf="project.github" [href]="project.github" target="_blank" class="project-link" title="View on GitHub">
+            <a *ngIf="project.github" [href]="project.github" target="_blank" class="project-link" title="View on GitHub" (click)="$event.stopPropagation()">
               <i class="fab fa-github"></i>
             </a>
-            <a *ngIf="project.demo" [href]="project.demo" target="_blank" class="project-link" title="Live Demo">
+            <a *ngIf="project.demo" [href]="project.demo" target="_blank" class="project-link" title="Live Demo" (click)="$event.stopPropagation()">
               <i class="fas fa-external-link-alt"></i>
             </a>
           </div>
