@@ -10,6 +10,21 @@
     user-select: none;
   }
   
+  .cursor {
+    display: inline-block;
+    width: 0.6em;
+    height: 1em;
+    background-color: #33ff33;
+    margin-left: 2px;
+    animation: blink 1s step-end infinite;
+    vertical-align: middle;
+  }
+  
+  @keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  
   .command {
     color: #ffffff;
     font-weight: bold;
