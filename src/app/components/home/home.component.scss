@@ -1,23 +1,33 @@
-// Terminal line styles
+// Base Terminal Styles
 .terminal-line {
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.5rem;
   white-space: pre-wrap;
   word-break: break-word;
   
   .prompt {
     color: #33ff33;
-    margin-right: 0.5rem;
+    margin-right: 0.8rem;
     user-select: none;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
   }
   
+  .command {
+    color: #4d9eff;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+  }
+  
+  // Cursor animation
   .cursor {
     display: inline-block;
-    width: 0.6em;
-    height: 1em;
+    width: 10px;
+    height: 1.2em;
     background-color: #33ff33;
-    margin-left: 2px;
+    margin-left: 4px;
     animation: blink 1s step-end infinite;
     vertical-align: middle;
+    box-shadow: 0 0 5px rgba(51, 255, 51, 0.5);
   }
   
   @keyframes blink {
@@ -25,118 +35,236 @@
     50% { opacity: 0; }
   }
   
-  .command {
-    color: #ffffff;
-    font-weight: bold;
-  }
-  
+  // Output Styling
   &.output {
-    margin-left: 1.5rem;
     color: #e0e0e0;
+    line-height: 1.6;
+    margin-left: 1.5rem;
     
     p {
       margin: 0.5rem 0;
-      line-height: 1.6;
     }
     
     .highlight {
       color: #ffcc00;
       font-weight: bold;
+      text-shadow: 0 0 5px rgba(255, 204, 0, 0.3);
     }
   }
 }
 
-// File listing styles
-.file-listing {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 0.5rem;
+// Welcome Message Section
+.welcome-message {
+  text-align: center;
+  margin: 1rem 0 2rem;
   
-  .file {
-    color: #4d9eff;
-    cursor: pointer;
-    transition: color 0.3s;
+  .ascii-art {
+    color: #33ff33;
+    font-family: 'Courier New', monospace;
+    font-size: 0.5rem;
+    line-height: 1.2;
+    margin: 1rem 0;
+    white-space: pre;
+    overflow-x: auto;
     
-    &:hover {
-      color: #7db8ff;
-      text-decoration: underline;
+    @media (min-width: 768px) {
+      font-size: 0.6rem;
+      margin: 1.5rem 0;
     }
+  }
+  
+  .greeting {
+    font-size: 2rem;
+    color: #ffffff;
+    margin: 1rem 0 0.5rem;
+    font-family: 'Press Start 2P', monospace;
+    text-shadow: 0 0 10px rgba(51, 255, 51, 0.3);
+    
+    @media (min-width: 768px) {
+      font-size: 2.5rem;
+    }
+  }
+  
+  .tagline {
+    font-size: 1.2rem;
+    color: #4d9eff;
+    margin-bottom: 1.5rem;
+    font-weight: normal;
+    
+    @media (min-width: 768px) {
+      font-size: 1.5rem;
+    }
+  }
+  
+  .intro {
+    max-width: 700px;
+    margin: 0 auto 1.5rem !important;
+    color: #aaa;
+    font-size: 1.1rem;
+    line-height: 1.7;
   }
 }
 
-// Contact links
-.contact-links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  margin-top: 1rem;
+// Navigation Grid
+.nav-links {
+  .nav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.2rem;
+    margin: 1.5rem 0;
+    
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
   
-  .contact-link {
-    color: #4d9eff;
-    text-decoration: none;
+  .nav-item {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    transition: color 0.3s, transform 0.2s;
+    justify-content: center;
+    padding: 1.5rem 1rem;
+    background: rgba(51, 255, 51, 0.05);
+    border: 1px solid rgba(51, 255, 51, 0.1);
+    border-radius: 8px;
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-align: center;
     
     &:hover {
-      color: #7db8ff;
-      transform: translateX(5px);
+      background: rgba(51, 255, 51, 0.1);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(51, 255, 51, 0.1);
+      border-color: rgba(51, 255, 51, 0.3);
+      
+      i {
+        transform: scale(1.2);
+      }
     }
     
     i {
-      margin-right: 0.5rem;
-      width: 20px;
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+      color: #33ff33;
+      transition: all 0.3s ease;
+    }
+    
+    span {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+  }
+}
+
+// Status Section
+.status {
+  .status-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    
+    i {
+      width: 24px;
+      color: #33ff33;
+      margin-right: 0.8rem;
       text-align: center;
     }
+    
+    .highlight {
+      color: #33ff33;
+      font-weight: bold;
+    }
   }
 }
 
-// Cursor animation
-.cursor {
-  display: inline-block;
-  width: 10px;
-  height: 1.2em;
-  background-color: #33ff33;
-  margin-left: 2px;
-  animation: blink 1s step-end infinite;
-  vertical-align: middle;
-}
-
-// Blink animation
-@keyframes blink {
-  from, to { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-// Responsive design
-@media (max-width: 768px) {
-  .terminal-body {
-    padding: 1rem;
+// Connect Section
+.connect-links {
+  p {
+    margin-bottom: 1.5rem;
+    color: #aaa;
   }
   
+  .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    
+    @media (max-width: 480px) {
+      flex-direction: column;
+    }
+  }
+  
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.8rem 1.5rem;
+    background: rgba(51, 255, 51, 0.1);
+    border: 1px solid rgba(51, 255, 51, 0.2);
+    border-radius: 4px;
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: rgba(51, 255, 51, 0.2);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(51, 255, 51, 0.1);
+      
+      i {
+        transform: scale(1.1);
+      }
+    }
+    
+    i {
+      margin-right: 0.8rem;
+      font-size: 1.1rem;
+      color: #33ff33;
+      transition: all 0.3s ease;
+    }
+    
+    span {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
   .terminal-line {
-    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+    font-size: 0.95rem;
     
     &.output {
-      margin-left: 0.5rem;
+      margin-left: 1rem;
+    }
+    
+    .welcome-message {
+      .greeting {
+        font-size: 1.8rem;
+      }
+      
+      .tagline {
+        font-size: 1.2rem;
+      }
+      
+      .intro {
+        font-size: 1rem;
+      }
     }
   }
   
-  .file-listing {
-    flex-direction: column;
-    gap: 0.5rem;
+  .nav-links .nav-grid {
+    gap: 0.8rem;
   }
   
-  .contact-links {
-    .contact-link {
-      font-size: 0.9rem;
-    }
+  .connect-links .social-link {
+    padding: 0.7rem 1.2rem;
   }
 }
 
-// Add the Press Start 2P font for pixel text
+// Import fonts
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
-// Add Font Awesome for icons
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');

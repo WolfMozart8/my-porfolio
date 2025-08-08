@@ -1,57 +1,88 @@
-<app-terminal terminalTitle="home.sh">
-  <div class="terminal-line">
-    <span class="prompt">user&#64;portfolio:~$</span>
-    <span class="command">whoami</span>
-  </div>
-  <div class="terminal-line output">
-    <p>Hello, I'm <span class="highlight">[Your Name]</span></p>
-    <p>Full Stack Developer & Tech Enthusiast</p>
-  </div>
-  
-  <div class="terminal-line">
-    <span class="prompt">user&#64;portfolio:~$</span>
-    <span class="command">cat about_me.txt</span>
-  </div>
-  <div class="terminal-line output">
-    <p>Welcome to my digital portfolio! I'm a passionate developer</p>
-    <p>with expertise in modern web technologies and a love for</p>
-    <p>creating elegant solutions to complex problems.</p>
-  </div>
-  
-  <div class="terminal-line">
-    <span class="prompt">user&#64;portfolio:~$</span>
-    <span class="command">ls -l skills/</span>
-  </div>
-  <div class="terminal-line output">
-    <div class="file-listing">
-      <div class="file">Frontend/</div>
-      <div class="file">Backend/</div>
-      <div class="file">DevOps/</div>
-      <div class="file">Tools/</div>
+<app-terminal terminalTitle="welcome.sh">
+  <!-- Welcome Message -->
+  <div class="terminal-line output welcome-message">
+    <div class="ascii-art">
+      <pre>
+  _    _      _ _        __        __         _     _ 
+ | |  | |    | | |       \ \      / /__  _ __| | __| |
+ | |  | | ___| | | ___    \ \ /\ / / _ \| '__| |/ _` |
+ | |/\| |/ _ \ | |/ _ \    \ V  V / (_) | |  | | (_| |
+  \/  \/  \___/_|_|\___/     \_/\_/ \___/|_|  |_|\__,_|
+      </pre>
     </div>
+    <h1 class="greeting">Hello, I'm <span class="highlight">[Your Name]</span></h1>
+    <h2 class="tagline">Full Stack Developer & Problem Solver</h2>
+    <p class="intro">Welcome to my digital portfolio! I build exceptional digital experiences with modern web technologies.</p>
   </div>
-  
+
+  <!-- Quick Navigation -->
   <div class="terminal-line">
-    <span class="prompt">user&#64;portfolio:~$</span>
-    <span class="command">./contact.sh</span>
+    <span class="prompt">visitor&#64;portfolio:~$</span>
+    <span class="command">./navigate.sh</span>
   </div>
-  <div class="terminal-line output">
-    <p>Let's connect! Feel free to reach out through any of these channels:</p>
-    <div class="contact-links">
-      <a href="mailto:your.email&#64;example.com" class="contact-link">
-        <i class="fas fa-envelope"></i> your.email&#64;example.com
+  <div class="terminal-line output nav-links">
+    <div class="nav-grid">
+      <a href="#about" class="nav-item">
+        <i class="fas fa-user-astronaut"></i>
+        <span>About Me</span>
       </a>
-      <a href="https://github.com/yourusername" target="_blank" class="contact-link">
-        <i class="fab fa-github"></i> github.com/yourusername
+      <a href="#projects" class="nav-item">
+        <i class="fas fa-laptop-code"></i>
+        <span>Projects</span>
       </a>
-      <a href="https://linkedin.com/in/yourusername" target="_blank" class="contact-link">
-        <i class="fab fa-linkedin"></i> linkedin.com/in/yourusername
+      <a href="#skills" class="nav-item">
+        <i class="fas fa-code"></i>
+        <span>Skills</span>
+      </a>
+      <a href="#contact" class="nav-item">
+        <i class="fas fa-paper-plane"></i>
+        <span>Contact</span>
       </a>
     </div>
   </div>
-  
+
+  <!-- Quick Status -->
   <div class="terminal-line">
-    <span class="prompt">user&#64;portfolio:~$</span>
+    <span class="prompt">visitor&#64;portfolio:~$</span>
+    <span class="command">status</span>
+  </div>
+  <div class="terminal-line output status">
+    <div class="status-item">
+      <i class="fas fa-briefcase"></i>
+      <span>Currently: <span class="highlight">Open to Opportunities</span></span>
+    </div>
+    <div class="status-item">
+      <i class="fas fa-map-marker-alt"></i>
+      <span>Based in: <span class="highlight">[Your Location]</span></span>
+    </div>
+  </div>
+
+  <!-- Quick Connect -->
+  <div class="terminal-line">
+    <span class="prompt">visitor&#64;portfolio:~$</span>
+    <span class="command">./connect.sh</span>
+  </div>
+  <div class="terminal-line output connect-links">
+    <p>Let's get in touch! I'm always open to discussing new projects, creative ideas, or opportunities.</p>
+    <div class="social-links">
+      <a href="mailto:your.email@example.com" class="social-link" target="_blank">
+        <i class="fas fa-envelope"></i>
+        <span>Email Me</span>
+      </a>
+      <a href="https://github.com/yourusername" class="social-link" target="_blank">
+        <i class="fab fa-github"></i>
+        <span>GitHub</span>
+      </a>
+      <a href="https://linkedin.com/in/yourusername" class="social-link" target="_blank">
+        <i class="fab fa-linkedin-in"></i>
+        <span>LinkedIn</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Terminal Cursor -->
+  <div class="terminal-line">
+    <span class="prompt">visitor&#64;portfolio:~$</span>
     <span class="cursor">_</span>
   </div>
 </app-terminal>
