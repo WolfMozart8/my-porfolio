@@ -2,14 +2,22 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TerminalComponent } from '../terminal/terminal.component';
 
+type SkillTag = {
+  name: string;
+  class: string;
+};
+
+type Skill = {
+  name: string;
+  level: number;
+  icon?: string;
+  tags: SkillTag[];
+};
+
 type SkillCategory = {
   name: string;
   icon: string;
-  skills: {
-    name: string;
-    level: number;
-    icon?: string;
-  }[];
+  skills: Skill[];
 };
 
 @Component({
@@ -29,44 +37,224 @@ export class SkillsComponent implements OnInit {
       name: 'languages',
       icon: 'fa-code',
       skills: [
-        { name: 'TypeScript', level: 90, icon: 'fa-brands fa-js' },
-        { name: 'Python', level: 85, icon: 'fa-brands fa-python' },
-        { name: 'Java', level: 80, icon: 'fa-brands fa-java' },
-        { name: 'C#', level: 75, icon: 'fa-solid fa-c' },
-        { name: 'SQL', level: 85, icon: 'fa-solid fa-database' },
+        { 
+          name: 'TypeScript', 
+          level: 90, 
+          icon: 'fa-brands fa-js', 
+          tags: [
+            { name: 'Frontend', class: 'tag-frontend' },
+            { name: 'Web Dev', class: 'tag-web' },
+            { name: 'Full Stack', class: 'tag-fullstack' }
+          ]
+        },
+        { 
+          name: 'Python', 
+          level: 85, 
+          icon: 'fa-brands fa-python',
+          tags: [
+            { name: 'Backend', class: 'tag-backend' },
+            { name: 'Automation', class: 'tag-auto' },
+            { name: 'AI/ML', class: 'tag-ai' }
+          ]
+        },
+        { 
+          name: 'Java', 
+          level: 80, 
+          icon: 'fa-brands fa-java',
+          tags: [
+            { name: 'Backend', class: 'tag-backend' },
+            { name: 'Enterprise', class: 'tag-enterprise' },
+            { name: 'Microservices', class: 'tag-micro' }
+          ]
+        },
+        { 
+          name: 'C#', 
+          level: 75, 
+          icon: 'fa-solid fa-c',
+          tags: [
+            { name: 'Backend', class: 'tag-backend' },
+            { name: 'Desktop', class: 'tag-desktop' },
+            { name: 'Game Dev', class: 'tag-game' }
+          ]
+        },
+        { 
+          name: 'SQL', 
+          level: 85, 
+          icon: 'fa-solid fa-database',
+          tags: [
+            { name: 'Databases', class: 'tag-db' },
+            { name: 'Backend', class: 'tag-backend' },
+            { name: 'Data', class: 'tag-data' }
+          ]
+        },
       ]
     },
     {
       name: 'frontend',
       icon: 'fa-desktop',
       skills: [
-        { name: 'Angular', level: 90, icon: 'fa-brands fa-angular' },
-        { name: 'React', level: 80, icon: 'fa-brands fa-react' },
-        { name: 'HTML5', level: 95, icon: 'fa-brands fa-html5' },
-        { name: 'CSS3/SCSS', level: 90, icon: 'fa-brands fa-css3-alt' },
-        { name: 'RxJS', level: 85, icon: 'fa-solid fa-bolt' },
+        { 
+          name: 'Angular', 
+          level: 90, 
+          icon: 'fa-brands fa-angular',
+          tags: [
+            { name: 'Frontend', class: 'tag-frontend' },
+            { name: 'SPA', class: 'tag-spa' },
+            { name: 'TypeScript', class: 'tag-ts' }
+          ]
+        },
+        { 
+          name: 'React', 
+          level: 80, 
+          icon: 'fa-brands fa-react',
+          tags: [
+            { name: 'Frontend', class: 'tag-frontend' },
+            { name: 'UI', class: 'tag-ui' },
+            { name: 'Component', class: 'tag-comp' }
+          ]
+        },
+        { 
+          name: 'HTML5', 
+          level: 95, 
+          icon: 'fa-brands fa-html5',
+          tags: [
+            { name: 'Web', class: 'tag-web' },
+            { name: 'Markup', class: 'tag-markup' },
+            { name: 'Frontend', class: 'tag-frontend' }
+          ]
+        },
+        { 
+          name: 'CSS3/SCSS', 
+          level: 90, 
+          icon: 'fa-brands fa-css3-alt',
+          tags: [
+            { name: 'Styling', class: 'tag-style' },
+            { name: 'Responsive', class: 'tag-resp' },
+            { name: 'Design', class: 'tag-design' }
+          ]
+        },
+        { 
+          name: 'RxJS', 
+          level: 85, 
+          icon: 'fa-solid fa-bolt',
+          tags: [
+            { name: 'Reactive', class: 'tag-reactive' },
+            { name: 'Async', class: 'tag-async' },
+            { name: 'Streams', class: 'tag-streams' }
+          ]
+        },
       ]
     },
     {
       name: 'backend',
       icon: 'fa-server',
       skills: [
-        { name: 'Node.js', level: 85, icon: 'fa-brands fa-node-js' },
-        { name: 'Express', level: 80, icon: 'fa-solid fa-server' },
-        { name: '.NET Core', level: 75, icon: 'fa-brands fa-windows' },
-        { name: 'RESTful APIs', level: 90, icon: 'fa-solid fa-route' },
-        { name: 'GraphQL', level: 70, icon: 'fa-solid fa-diagram-project' },
+        { 
+          name: 'Node.js', 
+          level: 85, 
+          icon: 'fa-brands fa-node-js',
+          tags: [
+            { name: 'Backend', class: 'tag-backend' },
+            { name: 'JavaScript', class: 'tag-js' },
+            { name: 'API', class: 'tag-api' }
+          ]
+        },
+        { 
+          name: 'Express', 
+          level: 80, 
+          icon: 'fa-solid fa-server',
+          tags: [
+            { name: 'Backend', class: 'tag-backend' },
+            { name: 'REST', class: 'tag-rest' },
+            { name: 'API', class: 'tag-api' }
+          ]
+        },
+        { 
+          name: '.NET Core', 
+          level: 75, 
+          icon: 'fa-brands fa-windows',
+          tags: [
+            { name: 'Backend', class: 'tag-backend' },
+            { name: 'C#', class: 'tag-csharp' },
+            { name: 'Microservices', class: 'tag-micro' }
+          ]
+        },
+        { 
+          name: 'RESTful APIs', 
+          level: 90, 
+          icon: 'fa-solid fa-route',
+          tags: [
+            { name: 'API', class: 'tag-api' },
+            { name: 'Backend', class: 'tag-backend' },
+            { name: 'Integration', class: 'tag-integration' }
+          ]
+        },
+        { 
+          name: 'GraphQL', 
+          level: 70, 
+          icon: 'fa-solid fa-diagram-project',
+          tags: [
+            { name: 'API', class: 'tag-api' },
+            { name: 'Query', class: 'tag-query' },
+            { name: 'Flexible', class: 'tag-flex' }
+          ]
+        },
       ]
     },
     {
       name: 'tools',
       icon: 'fa-tools',
       skills: [
-        { name: 'Git', level: 90, icon: 'fa-brands fa-git-alt' },
-        { name: 'Docker', level: 75, icon: 'fa-brands fa-docker' },
-        { name: 'Azure', level: 70, icon: 'fa-brands fa-microsoft' },
-        { name: 'AWS', level: 65, icon: 'fa-brands fa-aws' },
-        { name: 'CI/CD', level: 80, icon: 'fa-solid fa-arrows-rotate' },
+        { 
+          name: 'Git', 
+          level: 90, 
+          icon: 'fa-brands fa-git-alt',
+          tags: [
+            { name: 'Version Control', class: 'tag-vcs' },
+            { name: 'Collaboration', class: 'tag-collab' },
+            { name: 'DevOps', class: 'tag-devops' }
+          ]
+        },
+        { 
+          name: 'Docker', 
+          level: 75, 
+          icon: 'fa-brands fa-docker',
+          tags: [
+            { name: 'Containers', class: 'tag-containers' },
+            { name: 'DevOps', class: 'tag-devops' },
+            { name: 'Deployment', class: 'tag-deploy' }
+          ]
+        },
+        { 
+          name: 'Azure', 
+          level: 70, 
+          icon: 'fa-brands fa-microsoft',
+          tags: [
+            { name: 'Cloud', class: 'tag-cloud' },
+            { name: 'Hosting', class: 'tag-host' },
+            { name: 'Services', class: 'tag-services' }
+          ]
+        },
+        { 
+          name: 'AWS', 
+          level: 65, 
+          icon: 'fa-brands fa-aws',
+          tags: [
+            { name: 'Cloud', class: 'tag-cloud' },
+            { name: 'Hosting', class: 'tag-host' },
+            { name: 'Services', class: 'tag-services' }
+          ]
+        },
+        { 
+          name: 'CI/CD', 
+          level: 80, 
+          icon: 'fa-solid fa-arrows-rotate',
+          tags: [
+            { name: 'DevOps', class: 'tag-devops' },
+            { name: 'Automation', class: 'tag-auto' },
+            { name: 'Deployment', class: 'tag-deploy' }
+          ]
+        },
       ]
     }
   ];
@@ -93,11 +281,35 @@ export class SkillsComponent implements OnInit {
     return 'beginner';
   }
 
-  // Generate random skill tags for display
+  // Generate random tags for a skill
+  private generateRandomTags(count: number): {name: string, class: string}[] {
+    const allTags = [
+      {name: 'Web Development', class: 'tag-web'},
+      {name: 'Mobile', class: 'tag-mobile'},
+      {name: 'Cloud', class: 'tag-cloud'},
+      {name: 'DevOps', class: 'tag-devops'},
+      {name: 'UI/UX', class: 'tag-ui'},
+      {name: 'Testing', class: 'tag-testing'},
+      {name: 'Performance', class: 'tag-perf'},
+      {name: 'Security', class: 'tag-security'},
+      {name: 'APIs', class: 'tag-api'},
+      {name: 'Microservices', class: 'tag-micro'},
+      {name: 'Databases', class: 'tag-db'},
+      {name: 'Frontend', class: 'tag-frontend'},
+      {name: 'Backend', class: 'tag-backend'},
+      {name: 'Full Stack', class: 'tag-fullstack'},
+      {name: 'CI/CD', class: 'tag-cicd'}
+    ];
+    
+    // Shuffle and pick 'count' tags
+    return [...allTags]
+      .sort(() => 0.5 - Math.random())
+      .slice(0, count);
+  }
+
+  // This is kept for backward compatibility but should be removed if not used elsewhere
   getRandomSkillTag(): string {
     const tags = [
-      'Web Development', 'Mobile', 'Cloud', 'DevOps', 'UI/UX', 'Testing',
-      'Performance', 'Security', 'APIs', 'Microservices', 'Databases',
       'Algorithms', 'Data Structures', 'Design Patterns', 'Agile', 'CI/CD',
       'Automation', 'Containerization', 'Serverless', 'AI/ML', 'Blockchain'
     ];

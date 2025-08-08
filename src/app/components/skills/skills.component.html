@@ -1,4 +1,4 @@
-<app-terminal title="skills.exe">
+<app-terminal terminalTitle="skills.exe">
   <!-- Terminal Loading Animation -->
   <div class="terminal-line" *ngIf="!showTerminalOutput">
     <span class="prompt">></span>
@@ -43,11 +43,11 @@
           <span class="skill-percentage">{{ skill.level }}%</span>
         </div>
         
-        <!-- Skill Description -->
-        <div class="skill-description">
-          <div class="skill-tag" *ngFor="let i of [1, 2, 3]" [ngClass]="getRandomTagClass()">
+        <!-- Skill Tags -->
+        <div class="skill-tags">
+          <div class="skill-tag" *ngFor="let tag of skill.tags" [ngClass]="tag.class">
             <i class="fas fa-tag"></i>
-            <span>{{ getRandomSkillTag() }}</span>
+            <span>{{ tag.name }}</span>
           </div>
         </div>
       </div>

@@ -1,3 +1,18 @@
+:host {
+  position: sticky;
+  top: 100px;
+  max-height: 80dvh;
+}
+
+@media (max-width: 768px) {
+  :host {
+    // top: none;
+    order: 2;
+    bottom: 20px;
+    z-index: 10;
+  }
+}
+
 // Retro Sidebar Styles
 .retro-sidebar {
   width: 250px;

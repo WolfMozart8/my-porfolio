@@ -8,5 +8,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './terminal.component.scss'
 })
 export class TerminalComponent {
-  @Input() title: string = 'Terminal';
+  @Input() terminalTitle: string = 'Terminal';
 }
