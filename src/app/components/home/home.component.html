@@ -10,9 +10,12 @@
   \/  \/  \___/_|_|\___/     \_/\_/ \___/|_|  |_|\__,_|
       </pre>
     </div>
-    <h1 class="greeting">Hello, I'm <span class="highlight">[Your Name]</span></h1>
-    <h2 class="tagline">Full Stack Developer & Problem Solver</h2>
-    <p class="intro">Welcome to my digital portfolio! I build exceptional digital experiences with modern web technologies.</p>
+    <!-- <div class="terminal-display">
+      <pre class="typing-animation" [innerHTML]="displayText | terminalFormatter"></pre>
+    </div> -->
+    <h1 class="greeting">{{ 'GREETING' | translate }} <span class="highlight">{{ yourName }}</span></h1>
+    <h2 class="tagline">{{ 'TAGLINE' | translate }}</h2>
+    <p class="intro">{{ 'WELCOME' | translate }}</p>
   </div>
 
   <!-- Quick Navigation -->
@@ -24,19 +27,19 @@
     <div class="nav-grid">
       <a href="#about" class="nav-item">
         <i class="fas fa-user-astronaut"></i>
-        <span>About Me</span>
+        <span>{{ 'ABOUT_ME' | translate }}</span>
       </a>
       <a href="#projects" class="nav-item">
         <i class="fas fa-laptop-code"></i>
-        <span>Projects</span>
+        <span>{{ 'PROJECTS' | translate }}</span>
       </a>
       <a href="#skills" class="nav-item">
         <i class="fas fa-code"></i>
-        <span>Skills</span>
+        <span>{{ 'SKILLS' | translate }}</span>
       </a>
       <a href="#contact" class="nav-item">
         <i class="fas fa-paper-plane"></i>
-        <span>Contact</span>
+        <span>{{ 'CONTACT' | translate }}</span>
       </a>
     </div>
   </div>
@@ -49,11 +52,11 @@
   <div class="terminal-line output status">
     <div class="status-item">
       <i class="fas fa-briefcase"></i>
-      <span>Currently: <span class="highlight">Open to Opportunities</span></span>
+      <span>{{ 'CURRENTLY' | translate: { status: ('OPEN_TO_OPPORTUNITIES' | translate) } }}</span>
     </div>
     <div class="status-item">
       <i class="fas fa-map-marker-alt"></i>
-      <span>Based in: <span class="highlight">[Your Location]</span></span>
+      <span>{{ 'LOCATION' | translate: { location: yourLocation } }}</span>
     </div>
   </div>
 
@@ -63,19 +66,19 @@
     <span class="command">./connect.sh</span>
   </div>
   <div class="terminal-line output connect-links">
-    <p>Let's get in touch! I'm always open to discussing new projects, creative ideas, or opportunities.</p>
+    <p>{{ 'CONTACT_ME' | translate }}</p>
     <div class="social-links">
       <a href="mailto:your.email@example.com" class="social-link" target="_blank">
         <i class="fas fa-envelope"></i>
-        <span>Email Me</span>
+        <span>{{ 'EMAIL_ME' | translate }}</span>
       </a>
       <a href="https://github.com/yourusername" class="social-link" target="_blank">
         <i class="fab fa-github"></i>
-        <span>GitHub</span>
+        <span>{{ 'GITHUB' | translate }}</span>
       </a>
       <a href="https://linkedin.com/in/yourusername" class="social-link" target="_blank">
         <i class="fab fa-linkedin-in"></i>
-        <span>LinkedIn</span>
+        <span>{{ 'LINKEDIN' | translate }}</span>
       </a>
     </div>
   </div>

@@ -1,10 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LanguageSwitcherComponent } from '../language-switcher/language-switcher.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, LanguageSwitcherComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -23,6 +24,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   private erasingSpeed: number = 50; // ms per character when erasing
   private newTextDelay: number = 2000; // delay before starting to type next role
   private timeoutId: any;
+  constructor() {}
 
   ngOnInit(): void {
     this.typeWriter();

@@ -1,0 +1,62 @@
+.language-switcher {
+  display: none;
+  gap: 5px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 5px;
+  border-radius: 20px;
+  border: 2px solid #444;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  // position: absolute;
+  // top: 20px;
+  // right: 20px;
+  z-index: 10;
+
+  &.mobile {
+    position: inherit;
+    // bottom: 20px;
+    // right: 20px;
+  }
+
+  button {
+    background: none;
+    border: none;
+    color: #888;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    &:hover {
+      color: #fff;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    &.active {
+      color: #33ff33;
+      background-color: rgba(51, 255, 51, 0.1);
+      box-shadow: 0 0 5px #33ff33;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .language-switcher {
+    display: none;
+  }
+  .language-switcher.mobile {
+    display: flex;
+  }
+}
+
+@media (min-width: 768px) {
+  .language-switcher {
+    display: flex;
+  }
+  .language-switcher.mobile {
+    display: none;
+  }
+}

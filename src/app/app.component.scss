@@ -17,6 +17,7 @@
 
 // Content area where router-outlet content will be displayed
 .content-area {
+  max-height: 80dvh;
   flex: 1;
   background: white;
   border-radius: 8px;
