@@ -1,0 +1,17 @@
+{
+  "contact": {
+    "title": "GET IN TOUCH",
+    "form": {
+      "name": "NAME",
+      "namePlaceholder": "Enter your name...",
+      "email": "EMAIL",
+      "emailPlaceholder": "your.email@example.com",
+      "message": "MESSAGE",
+      "messagePlaceholder": "Type your message here...",
+      "send": "SEND MESSAGE",
+      "sending": "SENDING...",
+      "sent": "MESSAGE SENT!",
+      "orFindMe": "OR FIND ME HERE"
+    }
+  }
+}

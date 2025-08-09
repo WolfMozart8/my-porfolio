@@ -1,0 +1,17 @@
+{
+  "contact": {
+    "title": "CONTÁCTAME",
+    "form": {
+      "name": "NOMBRE",
+      "namePlaceholder": "Ingresa tu nombre...",
+      "email": "CORREO ELECTRÓNICO",
+      "emailPlaceholder": "tu.email@ejemplo.com",
+      "message": "MENSAJE",
+      "messagePlaceholder": "Escribe tu mensaje aquí...",
+      "send": "ENVIAR MENSAJE",
+      "sending": "ENVIANDO...",
+      "sent": "¡MENSAJE ENVIADO!",
+      "orFindMe": "O ENCUÉNTRAME AQUÍ"
+    }
+  }
+}

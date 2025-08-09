@@ -7,13 +7,13 @@
   <!-- Contact Form -->
   <div class="terminal-line output">
     <div class="contact-container">
-      <h2 class="section-title">GET IN TOUCH</h2>
+      <h2 class="section-title">{{ translations.title || 'GET IN TOUCH' }}</h2>
       
       <div class="contact-methods">
         <!-- Contact Form -->
         <form (ngSubmit)="onSubmit()" #contactFormRef="ngForm" class="contact-form">
           <div class="form-group">
-            <label for="name">NAME</label>
+            <label for="name">{{ translations.form?.name || 'NAME' }}</label>
             <input 
               type="text" 
               id="name" 
@@ -21,12 +21,12 @@
               [(ngModel)]="contactForm.name" 
               required
               class="terminal-input"
-              placeholder="Enter your name..."
+              [placeholder]="translations.form?.namePlaceholder || 'Enter your name...'"
             >
           </div>
           
           <div class="form-group">
-            <label for="email">EMAIL</label>
+            <label for="email">{{ translations.form?.email || 'EMAIL' }}</label>
             <input 
               type="email" 
               id="email" 
@@ -34,12 +34,12 @@
               [(ngModel)]="contactForm.email" 
               required
               class="terminal-input"
-              placeholder="your.email@example.com"
+              [placeholder]="translations.form?.emailPlaceholder || 'your.email@example.com'"
             >
           </div>
           
           <div class="form-group">
-            <label for="message">MESSAGE</label>
+            <label for="message">{{ translations.form?.message || 'MESSAGE' }}</label>
             <textarea 
               id="message" 
               name="message" 
@@ -47,7 +47,7 @@
               required
               class="terminal-input"
               rows="5"
-              placeholder="Type your message here..."
+              [placeholder]="translations.form?.messagePlaceholder || 'Type your message here...'"
             ></textarea>
           </div>
           
@@ -57,16 +57,16 @@
               class="terminal-button"
               [disabled]="!contactFormRef.form.valid || isSending"
             >
-              <span *ngIf="!isSending && !isSubmitted">SEND MESSAGE</span>
-              <span *ngIf="isSending">SENDING...</span>
-              <span *ngIf="isSubmitted && !isSending">MESSAGE SENT!</span>
+              <span *ngIf="!isSending && !isSubmitted">{{ translations.form?.send || 'SEND MESSAGE' }}</span>
+              <span *ngIf="isSending">{{ translations.form?.sending || 'SENDING...' }}</span>
+              <span *ngIf="isSubmitted && !isSending">{{ translations.form?.sent || 'MESSAGE SENT!' }}</span>
             </button>
           </div>
         </form>
         
         <!-- Social Links -->
         <div class="social-links">
-          <h3>OR FIND ME HERE</h3>
+          <h3>{{ translations.form?.orFindMe || 'OR FIND ME HERE' }}</h3>
           <div class="social-grid">
             <a 
               *ngFor="let social of socialLinks" 

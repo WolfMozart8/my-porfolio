@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TerminalComponent } from '../terminal/terminal.component';
+import { LanguageService } from '../../services/language.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Subscription } from 'rxjs';
 
 interface SocialLink {
   name: string;
@@ -13,11 +16,14 @@ interface SocialLink {
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule, TerminalComponent],
+  imports: [CommonModule, FormsModule, TerminalComponent, HttpClientModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit, OnDestroy {
+  translations: any = {};
+  private langChangeSubscription: Subscription;
+  currentLanguage: string = 'en';
   contactForm = {
     name: '',
     email: '',
@@ -51,8 +57,48 @@ export class ContactComponent {
     }
   ];
 
-  isSubmitted = false;
   isSending = false;
+  isSubmitted = false;
+
+  constructor(
+    private languageService: LanguageService,
+    private http: HttpClient
+  ) {
+    this.langChangeSubscription = this.languageService.currentLanguage$.subscribe(lang => {
+      this.currentLanguage = lang;
+      this.loadTranslations();
+    });
+  }
+
+  ngOnInit() {
+    this.loadTranslations();
+  }
+
+  ngOnDestroy() {
+    if (this.langChangeSubscription) {
+      this.langChangeSubscription.unsubscribe();
+    }
+  }
+
+  private loadTranslations() {
+    const lang = this.languageService.getCurrentLanguage();
+    this.http.get(`/assets/i18n/${lang}.json`).subscribe({
+      next: (data: any) => {
+        this.translations = data.contact || {};
+      },
+      error: (error) => {
+        console.error('Failed to load translations:', error);
+        // Fallback to English if translation fails
+        if (lang !== 'en') {
+          this.http.get('/assets/i18n/en.json').subscribe({
+            next: (enData: any) => {
+              this.translations = enData.contact || {};
+            }
+          });
+        }
+      }
+    });
+  }
 
   onSubmit() {
     if (this.contactForm.name && this.contactForm.email && this.contactForm.message) {
