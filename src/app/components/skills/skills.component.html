@@ -8,9 +8,20 @@
   </div>
   
   <!-- Skills Content -->
-  <div class="skills-content" *ngIf="showTerminalOutput">
+  <div class="skills-content" *ngIf="showTerminalOutput && skillCategories?.length">
     <!-- Category Navigation -->
     <div class="category-nav">
+      <!-- All Skills -->
+      <button
+        [class.active]="activeCategory === 'all'"
+        (click)="setActiveCategory('all')"
+        class="category-button"
+      >
+        <!-- <i class="fas {{ category.icon }}"></i> -->
+        {{ 'all' | titlecase }}
+      </button>
+
+      <!-- Skill Categories -->
       <button 
         *ngFor="let category of skillCategories"
         [class.active]="activeCategory === category.name"
@@ -23,10 +34,10 @@
     </div>
     
     <!-- Skills Grid -->
-    <div class="skills-grid">
+    <div class="skills-grid" *ngIf="activeCategory">
       <div class="skill-card" *ngFor="let skill of getActiveSkills()">
         <div class="skill-header">
-          <i *ngIf="skill.icon" class="{{ skill.icon }}"></i>
+          <i class="{{ skill.icon }}"></i>
           <h3 class="skill-name">{{ skill.name }}</h3>
           <span class="skill-level {{ getSkillLevelClass(skill.level) }}">
             {{ getSkillLevelClass(skill.level) | titlecase }}

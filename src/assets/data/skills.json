@@ -1,0 +1,198 @@
+{
+  "skillCategories": [
+    {
+      "name": "languages",
+      "icon": "fa-code",
+      "skills": [
+        { 
+          "name": "TypeScript", 
+          "level": 90, 
+          "icon": "fa-brands fa-js", 
+          "tags": [
+            { "name": "Frontend", "class": "tag-frontend" },
+            { "name": "Web Dev", "class": "tag-web" },
+            { "name": "Full Stack", "class": "tag-fullstack" }
+          ]
+        },
+        { 
+          "name": "Python", 
+          "level": 85, 
+          "icon": "fa-brands fa-python",
+          "tags": [
+            { "name": "Backend", "class": "tag-backend" },
+            { "name": "Automation", "class": "tag-auto" },
+            { "name": "AI/ML", "class": "tag-ai" }
+          ]
+        },
+        { 
+          "name": "Java", 
+          "level": 80, 
+          "icon": "fa-brands fa-java",
+          "tags": [
+            { "name": "Backend", "class": "tag-backend" },
+            { "name": "Enterprise", "class": "tag-enterprise" },
+            { "name": "Microservices", "class": "tag-micro" }
+          ]
+        },
+        { 
+          "name": "C#", 
+          "level": 75, 
+          "icon": "fa-solid fa-c",
+          "tags": [
+            { "name": "Backend", "class": "tag-backend" },
+            { "name": "Desktop", "class": "tag-desktop" },
+            { "name": "Game Dev", "class": "tag-game" }
+          ]
+        },
+        { 
+          "name": "SQL", 
+          "level": 85, 
+          "icon": "fa-solid fa-database",
+          "tags": [
+            { "name": "Databases", "class": "tag-db" },
+            { "name": "Backend", "class": "tag-backend" },
+            { "name": "Data", "class": "tag-data" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "frontend",
+      "icon": "fa-desktop",
+      "skills": [
+        { 
+          "name": "Angular", 
+          "level": 90, 
+          "icon": "fa-brands fa-angular",
+          "tags": [
+            { "name": "Framework", "class": "tag-framework" },
+            { "name": "SPA", "class": "tag-spa" },
+            { "name": "TypeScript", "class": "tag-typescript" }
+          ]
+        },
+        { 
+          "name": "React", 
+          "level": 85, 
+          "icon": "fa-brands fa-react",
+          "tags": [
+            { "name": "Library", "class": "tag-lib" },
+            { "name": "UI", "class": "tag-ui" },
+            { "name": "JavaScript", "class": "tag-js" }
+          ]
+        },
+        { 
+          "name": "Vue.js", 
+          "level": 80, 
+          "icon": "fa-brands fa-vuejs",
+          "tags": [
+            { "name": "Framework", "class": "tag-framework" },
+            { "name": "Progressive", "class": "tag-prog" },
+            { "name": "UI", "class": "tag-ui" }
+          ]
+        },
+        { 
+          "name": "HTML5 & CSS3", 
+          "level": 95, 
+          "icon": "fa-brands fa-html5",
+          "tags": [
+            { "name": "Markup", "class": "tag-markup" },
+            { "name": "Styling", "class": "tag-style" },
+            { "name": "Web", "class": "tag-web" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "backend",
+      "icon": "fa-server",
+      "skills": [
+        { 
+          "name": "Node.js", 
+          "level": 88, 
+          "icon": "fa-brands fa-node-js",
+          "tags": [
+            { "name": "Runtime", "class": "tag-runtime" },
+            { "name": "JavaScript", "class": "tag-js" },
+            { "name": "API", "class": "tag-api" }
+          ]
+        },
+        { 
+          "name": "Express", 
+          "level": 85, 
+          "icon": "fa-bolt",
+          "tags": [
+            { "name": "Framework", "class": "tag-framework" },
+            { "name": "API", "class": "tag-api" },
+            { "name": "Middleware", "class": "tag-middleware" }
+          ]
+        },
+        { 
+          "name": "Django", 
+          "level": 78, 
+          "icon": "fa-brands fa-python",
+          "tags": [
+            { "name": "Framework", "class": "tag-framework" },
+            { "name": "Python", "class": "tag-python" },
+            { "name": "Full Stack", "class": "tag-fullstack" }
+          ]
+        },
+        { 
+          "name": "Spring Boot", 
+          "level": 75, 
+          "icon": "fa-leaf",
+          "tags": [
+            { "name": "Framework", "class": "tag-framework" },
+            { "name": "Java", "class": "tag-java" },
+            { "name": "Microservices", "class": "tag-micro" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "devops",
+      "icon": "fa-network-wired",
+      "skills": [
+        { 
+          "name": "Docker", 
+          "level": 82, 
+          "icon": "fa-brands fa-docker",
+          "tags": [
+            { "name": "Containers", "class": "tag-container" },
+            { "name": "Virtualization", "class": "tag-virt" },
+            { "name": "DevOps", "class": "tag-devops" }
+          ]
+        },
+        { 
+          "name": "Kubernetes", 
+          "level": 70, 
+          "icon": "fa-ship",
+          "tags": [
+            { "name": "Orchestration", "class": "tag-orch" },
+            { "name": "Cloud", "class": "tag-cloud" },
+            { "name": "Scaling", "class": "tag-scale" }
+          ]
+        },
+        { 
+          "name": "AWS", 
+          "level": 75, 
+          "icon": "fa-brands fa-aws",
+          "tags": [
+            { "name": "Cloud", "class": "tag-cloud" },
+            { "name": "Infrastructure", "class": "tag-infra" },
+            { "name": "Services", "class": "tag-services" }
+          ]
+        },
+        { 
+          "name": "CI/CD", 
+          "level": 80, 
+          "icon": "fa-solid fa-arrows-rotate",
+          "tags": [
+            { "name": "Automation", "class": "tag-auto" },
+            { "name": "DevOps", "class": "tag-devops" },
+            { "name": "Pipelines", "class": "tag-pipeline" }
+          ]
+        }
+      ]
+    }
+  ]
+}

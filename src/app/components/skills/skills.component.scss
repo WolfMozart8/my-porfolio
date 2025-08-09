@@ -42,6 +42,208 @@
   font-family: "Courier New", monospace;
 }
 
+/* Category Navigation */
+.category-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 2rem;
+  padding: 10px 0;
+  border-bottom: 1px solid #00ff00;
+  
+  .category-button {
+    background: transparent;
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    padding: 8px 16px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    
+    &:hover {
+      background: rgba(0, 255, 0, 0.1);
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+    }
+    
+    &.active {
+      background: #00ff00;
+      color: #000;
+      font-weight: bold;
+    }
+    
+    i {
+      font-size: 16px;
+    }
+  }
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 1.5rem;
+}
+
+.skill-card {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid #00ff00;
+  border-radius: 4px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 255, 0, 0.2);
+  }
+  
+  .skill-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    
+    i {
+      font-size: 1.8rem;
+      margin-right: 12px;
+      color: #00ff00;
+    }
+    
+    .skill-name {
+      flex-grow: 1;
+      margin: 0;
+      font-size: 1.2rem;
+      color: #fff;
+    }
+    
+    .skill-level {
+      font-size: 0.8rem;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: rgba(0, 255, 0, 0.2);
+      color: #00ff00;
+    }
+  }
+  
+  .skill-progress {
+    height: 6px;
+    background: rgba(0, 255, 0, 0.1);
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    position: relative;
+    
+    .progress-bar {
+      height: 100%;
+      transition: width 1s ease-in-out;
+      
+      &.beginner { background: #ff5252; }
+      &.intermediate { background: #ffc107; }
+      &.advanced { background: #4caf50; }
+      &.expert { background: #00bcd4; }
+    }
+    
+    .skill-percentage {
+      position: absolute;
+      right: 5px;
+      top: -20px;
+      font-size: 0.7rem;
+      color: #00ff00;
+    }
+  }
+  
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    
+    .skill-tag {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 8px;
+      border-radius: 3px;
+      font-size: 0.7rem;
+      background: rgba(0, 255, 0, 0.1);
+      color: #00ff00;
+      
+      i {
+        font-size: 0.6rem;
+      }
+      
+      // Tag type styles
+      &.tag-frontend { border-left: 3px solid #4caf50; }
+      &.tag-backend { border-left: 3px solid #2196f3; }
+      &.tag-devops { border-left: 3px solid #9c27b0; }
+      &.tag-database { border-left: 3px solid #ff9800; }
+      &.tag-tool { border-left: 3px solid #00bcd4; }
+      &.tag-ai { border-left: 3px solid #e91e63; }
+      &.tag-web { border-left: 3px solid #8bc34a; }
+      &.tag-mobile { border-left: 3px solid #ff5722; }
+    }
+  }
+}
+
+/* Terminal Footer */
+.terminal-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 255, 0, 0.3);
+  
+  .terminal-line {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+    font-family: 'Courier New', monospace;
+    
+    .prompt {
+      color: #00ff00;
+      margin-right: 8px;
+    }
+    
+    .command {
+      color: #00ff00;
+    }
+    
+    .output {
+      color: #fff;
+      opacity: 0.8;
+    }
+    
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      height: 16px;
+      background: #00ff00;
+      margin-left: 5px;
+      animation: blink 1s infinite;
+    }
+  }
+}
+
+/* Animations */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* No Categories Message */
+.no-categories {
+  color: #ff5252;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.1rem;
+  border: 1px solid #ff5252;
+  margin: 20px 0;
+  background: rgba(255, 82, 82, 0.1);
+  font-family: 'Courier New', monospace;
+}
+
 .skills-content {
   animation: fadeIn 0.5s ease-out;
 }

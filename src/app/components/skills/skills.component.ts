@@ -1,24 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TerminalComponent } from '../terminal/terminal.component';
+import { HttpClient } from '@angular/common/http';
+import { Subscription } from 'rxjs';
 
-type SkillTag = {
+export interface SkillTag {
   name: string;
   class: string;
-};
+}
 
-type Skill = {
+export interface Skill {
   name: string;
   level: number;
   icon?: string;
   tags: SkillTag[];
-};
+}
 
-type SkillCategory = {
+export interface SkillCategory {
   name: string;
   icon: string;
   skills: Skill[];
-};
+}
+
+interface SkillsData {
+  skillCategories: SkillCategory[];
+}
 
 @Component({
   selector: 'app-skills',
@@ -27,251 +33,103 @@ type SkillCategory = {
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss']
 })
-export class SkillsComponent implements OnInit {
-  activeCategory: string = 'languages';
-  showTerminalOutput = false;
+export class SkillsComponent implements OnInit, OnDestroy {
   terminalOutput = '';
-  
-  skillCategories: SkillCategory[] = [
-    {
-      name: 'languages',
-      icon: 'fa-code',
-      skills: [
-        { 
-          name: 'TypeScript', 
-          level: 90, 
-          icon: 'fa-brands fa-js', 
-          tags: [
-            { name: 'Frontend', class: 'tag-frontend' },
-            { name: 'Web Dev', class: 'tag-web' },
-            { name: 'Full Stack', class: 'tag-fullstack' }
-          ]
-        },
-        { 
-          name: 'Python', 
-          level: 85, 
-          icon: 'fa-brands fa-python',
-          tags: [
-            { name: 'Backend', class: 'tag-backend' },
-            { name: 'Automation', class: 'tag-auto' },
-            { name: 'AI/ML', class: 'tag-ai' }
-          ]
-        },
-        { 
-          name: 'Java', 
-          level: 80, 
-          icon: 'fa-brands fa-java',
-          tags: [
-            { name: 'Backend', class: 'tag-backend' },
-            { name: 'Enterprise', class: 'tag-enterprise' },
-            { name: 'Microservices', class: 'tag-micro' }
-          ]
-        },
-        { 
-          name: 'C#', 
-          level: 75, 
-          icon: 'fa-solid fa-c',
-          tags: [
-            { name: 'Backend', class: 'tag-backend' },
-            { name: 'Desktop', class: 'tag-desktop' },
-            { name: 'Game Dev', class: 'tag-game' }
-          ]
-        },
-        { 
-          name: 'SQL', 
-          level: 85, 
-          icon: 'fa-solid fa-database',
-          tags: [
-            { name: 'Databases', class: 'tag-db' },
-            { name: 'Backend', class: 'tag-backend' },
-            { name: 'Data', class: 'tag-data' }
-          ]
-        },
-      ]
-    },
-    {
-      name: 'frontend',
-      icon: 'fa-desktop',
-      skills: [
-        { 
-          name: 'Angular', 
-          level: 90, 
-          icon: 'fa-brands fa-angular',
-          tags: [
-            { name: 'Frontend', class: 'tag-frontend' },
-            { name: 'SPA', class: 'tag-spa' },
-            { name: 'TypeScript', class: 'tag-ts' }
-          ]
-        },
-        { 
-          name: 'React', 
-          level: 80, 
-          icon: 'fa-brands fa-react',
-          tags: [
-            { name: 'Frontend', class: 'tag-frontend' },
-            { name: 'UI', class: 'tag-ui' },
-            { name: 'Component', class: 'tag-comp' }
-          ]
-        },
-        { 
-          name: 'HTML5', 
-          level: 95, 
-          icon: 'fa-brands fa-html5',
-          tags: [
-            { name: 'Web', class: 'tag-web' },
-            { name: 'Markup', class: 'tag-markup' },
-            { name: 'Frontend', class: 'tag-frontend' }
-          ]
-        },
-        { 
-          name: 'CSS3/SCSS', 
-          level: 90, 
-          icon: 'fa-brands fa-css3-alt',
-          tags: [
-            { name: 'Styling', class: 'tag-style' },
-            { name: 'Responsive', class: 'tag-resp' },
-            { name: 'Design', class: 'tag-design' }
-          ]
-        },
-        { 
-          name: 'RxJS', 
-          level: 85, 
-          icon: 'fa-solid fa-bolt',
-          tags: [
-            { name: 'Reactive', class: 'tag-reactive' },
-            { name: 'Async', class: 'tag-async' },
-            { name: 'Streams', class: 'tag-streams' }
-          ]
-        },
-      ]
-    },
-    {
-      name: 'backend',
-      icon: 'fa-server',
-      skills: [
-        { 
-          name: 'Node.js', 
-          level: 85, 
-          icon: 'fa-brands fa-node-js',
-          tags: [
-            { name: 'Backend', class: 'tag-backend' },
-            { name: 'JavaScript', class: 'tag-js' },
-            { name: 'API', class: 'tag-api' }
-          ]
-        },
-        { 
-          name: 'Express', 
-          level: 80, 
-          icon: 'fa-solid fa-server',
-          tags: [
-            { name: 'Backend', class: 'tag-backend' },
-            { name: 'REST', class: 'tag-rest' },
-            { name: 'API', class: 'tag-api' }
-          ]
-        },
-        { 
-          name: '.NET Core', 
-          level: 75, 
-          icon: 'fa-brands fa-windows',
-          tags: [
-            { name: 'Backend', class: 'tag-backend' },
-            { name: 'C#', class: 'tag-csharp' },
-            { name: 'Microservices', class: 'tag-micro' }
-          ]
-        },
-        { 
-          name: 'RESTful APIs', 
-          level: 90, 
-          icon: 'fa-solid fa-route',
-          tags: [
-            { name: 'API', class: 'tag-api' },
-            { name: 'Backend', class: 'tag-backend' },
-            { name: 'Integration', class: 'tag-integration' }
-          ]
-        },
-        { 
-          name: 'GraphQL', 
-          level: 70, 
-          icon: 'fa-solid fa-diagram-project',
-          tags: [
-            { name: 'API', class: 'tag-api' },
-            { name: 'Query', class: 'tag-query' },
-            { name: 'Flexible', class: 'tag-flex' }
-          ]
-        },
-      ]
-    },
-    {
-      name: 'tools',
-      icon: 'fa-tools',
-      skills: [
-        { 
-          name: 'Git', 
-          level: 90, 
-          icon: 'fa-brands fa-git-alt',
-          tags: [
-            { name: 'Version Control', class: 'tag-vcs' },
-            { name: 'Collaboration', class: 'tag-collab' },
-            { name: 'DevOps', class: 'tag-devops' }
-          ]
-        },
-        { 
-          name: 'Docker', 
-          level: 75, 
-          icon: 'fa-brands fa-docker',
-          tags: [
-            { name: 'Containers', class: 'tag-containers' },
-            { name: 'DevOps', class: 'tag-devops' },
-            { name: 'Deployment', class: 'tag-deploy' }
-          ]
-        },
-        { 
-          name: 'Azure', 
-          level: 70, 
-          icon: 'fa-brands fa-microsoft',
-          tags: [
-            { name: 'Cloud', class: 'tag-cloud' },
-            { name: 'Hosting', class: 'tag-host' },
-            { name: 'Services', class: 'tag-services' }
-          ]
-        },
-        { 
-          name: 'AWS', 
-          level: 65, 
-          icon: 'fa-brands fa-aws',
-          tags: [
-            { name: 'Cloud', class: 'tag-cloud' },
-            { name: 'Hosting', class: 'tag-host' },
-            { name: 'Services', class: 'tag-services' }
-          ]
-        },
-        { 
-          name: 'CI/CD', 
-          level: 80, 
-          icon: 'fa-solid fa-arrows-rotate',
-          tags: [
-            { name: 'DevOps', class: 'tag-devops' },
-            { name: 'Automation', class: 'tag-auto' },
-            { name: 'Deployment', class: 'tag-deploy' }
-          ]
-        },
-      ]
-    }
-  ];
+  showTerminalOutput = false;
+  activeCategory = '';
+  skillCategories: SkillCategory[] = [];
+  filteredSkills: Skill[] = [];
+  private dataSubscription?: Subscription;
 
-  ngOnInit() {
-    // Simulate terminal typing effect on component load
-    this.simulateTerminal();
+  constructor(private http: HttpClient) { }
+
+  ngOnInit(): void {
+    this.loadSkills();
+    
+    // Simulate loading animation
+    const loadingText = 'Initializing skills matrix...\nLoading skill categories...\nProcessing skill data...\nDone!\n\n';
+    let i = 0;
+    const loadingInterval = setInterval(() => {
+      if (i < loadingText.length) {
+        this.terminalOutput += loadingText.charAt(i);
+        i++;
+      } else {
+        clearInterval(loadingInterval);
+        setTimeout(() => {
+          this.showTerminalOutput = true;
+        }, 500);
+      }
+    }, 12);
+  }
+  
+  ngOnDestroy(): void {
+    if (this.dataSubscription) {
+      this.dataSubscription.unsubscribe();
+    }
+  }
+  
+  private loadSkills(): void {
+    console.log('Loading skills data...');
+    this.dataSubscription = this.http.get<SkillsData>('assets/data/skills.json').subscribe({
+      next: (data) => {
+        console.log('Skills data loaded:', data);
+        this.skillCategories = data.skillCategories;
+        console.log('Skill categories set:', this.skillCategories);
+        
+        // Set the first category as active if not set
+        if (this.skillCategories.length > 0) {
+          if (!this.activeCategory) {
+            // this.activeCategory = this.skillCategories[0].name;
+            this.activeCategory = "all";
+          }
+          this.updateFilteredSkills();
+          console.log('Active category set to:', this.activeCategory);
+        } else {
+          console.warn('No skill categories found in the data');
+        }
+      },
+      error: (error) => {
+        console.error('Error loading skills data:', error);
+      },
+      complete: () => {
+        console.log('Skills data loading completed');
+      }
+    });
   }
 
-  setActiveCategory(category: string) {
+  setActiveCategory(category: string): void {
     this.activeCategory = category;
-    this.showTerminalOutput = false;
+    this.updateFilteredSkills();
+    // this.showTerminalOutput = false;
     // Optional: Add sound effect here for better UX
   }
-
-  getActiveSkills() {
-    return this.skillCategories.find(cat => cat.name === this.activeCategory)?.skills || [];
+  
+  private updateFilteredSkills(): void {
+    if (!this.activeCategory) {
+      this.filteredSkills = [];
+      return;
+    }
+    
+    if (this.activeCategory === "all") {
+      const foundSkills: Skill[] = [];
+      this.skillCategories.forEach(cat => {
+        if (cat.name !== "languages") {
+          foundSkills.push(...cat.skills);
+        }
+      });
+      
+      // Return skills sorted by level
+      this.filteredSkills = foundSkills.sort((a, b) => b.level - a.level);
+      return;
+    }
+    
+    const category = this.skillCategories.find(cat => cat.name === this.activeCategory);
+    this.filteredSkills = category ? [...category.skills] : [];
+  }
+  
+  getActiveSkills(): Skill[] {
+    if (!this.activeCategory) return [];
+    return this.filteredSkills;
   }
 
   getSkillLevelClass(level: number): string {
