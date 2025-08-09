@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-type Language = 'en' | 'es';
+export type Language = 'en' | 'es';
 
 @Injectable({
   providedIn: 'root'
@@ -18,9 +18,11 @@ export class LanguageService {
   }
 
   setLanguage(lang: Language): void {
-    this.currentLanguageSubject.next(lang);
-    localStorage.setItem('userLanguage', lang);
-    document.documentElement.lang = lang; // Update HTML lang attribute
+    if (lang !== this.currentLanguageSubject.value) {
+      this.currentLanguageSubject.next(lang);
+      localStorage.setItem('userLanguage', lang);
+      document.documentElement.lang = lang; // Update HTML lang attribute
+    }
   }
 
   getCurrentLanguage(): Language {

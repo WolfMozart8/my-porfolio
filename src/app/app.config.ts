@@ -3,10 +3,14 @@ import { provideRouter } from '@angular/router';
 import { provideHttpClient } from '@angular/common/http';
 
 import { routes } from './app.routes';
+import { TranslationService } from './services/translation.service';
+import { LanguageService } from './services/language.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
-    provideHttpClient()
+    provideHttpClient(),
+    TranslationService,
+    LanguageService
   ]
 };

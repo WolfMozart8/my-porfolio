@@ -1,4 +1,12 @@
 {
+  "header": {
+    "roles": [
+      "Desarrollador Full-Stack",
+      "Solucionador de Problemas",
+      "Entusiasta de la Tecnología",
+      "Pensador Creativo"
+    ]
+  },
   "contact": {
     "title": "CONTÁCTAME",
     "form": {

@@ -1,4 +1,12 @@
 {
+  "header": {
+    "roles": [
+      "Full-Stack Developer",
+      "Problem Solver",
+      "Tech Enthusiast",
+      "Creative Thinker"
+    ]
+  },
   "contact": {
     "title": "GET IN TOUCH",
     "form": {
