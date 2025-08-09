@@ -5,46 +5,39 @@
   </div>
   <div class="terminal-line output">
     <div class="about-content">
-      <div class="about-section">
-        <h3 class="section-title">ABOUT ME</h3>
-        <p>Hello! I'm <span class="highlight">[Your Name]</span>, a passionate developer with a love for creating beautiful and functional applications. With several years of experience in the tech industry, I specialize in building modern web applications using cutting-edge technologies.</p>
+      <!-- Loading State -->
+      <div *ngIf="isLoading" class="loading-state">
+        <div class="loading-spinner"></div>
+        <p>Loading profile data...</p>
       </div>
-      
-      <div class="about-section">
-        <h3 class="section-title">EXPERIENCE</h3>
-        <div class="experience-item">
-          <div class="job-title">Senior Developer</div>
-          <div class="company">Tech Solutions Inc. | 2020 - Present</div>
-          <ul class="job-description">
-            <li>Developed and maintained multiple web applications using Angular and Node.js</li>
-            <li>Led a team of 5 developers in implementing new features and improving performance</li>
-            <li>Reduced application load time by 40% through code optimization</li>
-          </ul>
+
+      <!-- Content -->
+      <div [class.hidden]="isLoading" [class.visible]="!isLoading">
+        <div class="about-section">
+          <h3 class="section-title">ABOUT ME</h3>
+          <p [innerHTML]="aboutText"></p>
         </div>
         
-        <div class="experience-item">
-          <div class="job-title">Frontend Developer</div>
-          <div class="company">Digital Creations | 2018 - 2020</div>
-          <ul class="job-description">
-            <li>Built responsive user interfaces using React and TypeScript</li>
-            <li>Collaborated with designers to implement pixel-perfect UIs</li>
-            <li>Improved application accessibility to meet WCAG 2.1 standards</li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="about-section">
-        <h3 class="section-title">EDUCATION</h3>
-        <div class="education-item">
-          <div class="degree">Master of Computer Science</div>
-          <div class="institution">Tech University | 2016 - 2018</div>
-          <div class="details">Specialized in Artificial Intelligence and Machine Learning</div>
+        <!-- Experience Section -->
+        <div class="about-section" *ngIf="experiences.length > 0">
+          <h3 class="section-title">EXPERIENCE</h3>
+          <div class="experience-item" *ngFor="let exp of experiences">
+            <div class="job-title">{{ exp.title }}</div>
+            <div class="company">{{ exp.company }} | {{ exp.period }}</div>
+            <ul class="job-description">
+              <li *ngFor="let desc of exp.description">{{ desc }}</li>
+            </ul>
+          </div>
         </div>
         
-        <div class="education-item">
-          <div class="degree">Bachelor of Science in Computer Science</div>
-          <div class="institution">State University | 2012 - 2016</div>
-          <div class="details">Graduated with Honors</div>
+        <!-- Education Section -->
+        <div class="about-section" *ngIf="education.length > 0">
+          <h3 class="section-title">EDUCATION</h3>
+          <div class="education-item" *ngFor="let edu of education">
+            <div class="degree">{{ edu.degree }}</div>
+            <div class="institution">{{ edu.institution }} | {{ edu.period }}</div>
+            <div class="details">{{ edu.details }}</div>
+          </div>
         </div>
       </div>
     </div>

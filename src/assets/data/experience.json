@@ -1,0 +1,48 @@
+{
+  "experiences": {
+    "en": [
+      {
+        "title": "Senior Developer",
+        "company": "Tech Solutions Inc.",
+        "period": "2020 - Present",
+        "description": [
+          "Developed and maintained multiple web applications using Angular and Node.js",
+          "Led a team of 5 developers in implementing new features and improving performance",
+          "Reduced application load time by 40% through code optimization"
+        ]
+      },
+      {
+        "title": "Frontend Developer",
+        "company": "Digital Creations",
+        "period": "2018 - 2020",
+        "description": [
+          "Built responsive user interfaces using React and TypeScript",
+          "Collaborated with designers to implement pixel-perfect UIs",
+          "Improved application accessibility to meet WCAG 2.1 standards"
+        ]
+      }
+    ],
+    "es": [
+      {
+        "title": "Desarrollador Senior",
+        "company": "Tech Solutions Inc.",
+        "period": "2020 - Presente",
+        "description": [
+          "Desarrollé y mantuve múltiples aplicaciones web utilizando Angular y Node.js",
+          "Lideré un equipo de 5 desarrolladores en la implementación de nuevas características y mejora del rendimiento",
+          "Reduje el tiempo de carga de la aplicación en un 40% mediante optimización de código"
+        ]
+      },
+      {
+        "title": "Desarrollador Frontend",
+        "company": "Digital Creations",
+        "period": "2018 - 2020",
+        "description": [
+          "Construí interfaces de usuario responsivas usando React y TypeScript",
+          "Colaboré con diseñadores para implementar interfaces de usuario perfectas",
+          "Mejoré la accesibilidad de la aplicación para cumplir con los estándares WCAG 2.1"
+        ]
+      }
+    ]
+  }
+}
