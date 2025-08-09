@@ -5,6 +5,7 @@ import { LanguageService } from '../../services/language.service';
 import { TranslatePipe } from '../../pipes/translate.pipe';
 import { TerminalFormatterPipe } from '../../pipes/terminal-formatter.pipe';
 import { Subscription } from 'rxjs';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ import { Subscription } from 'rxjs';
     CommonModule, 
     TerminalComponent, 
     TranslatePipe,
-    TerminalFormatterPipe
+    RouterLink
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
