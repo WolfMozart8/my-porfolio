@@ -35,31 +35,22 @@
     
     <!-- Skills Grid -->
     <div class="skills-grid" *ngIf="activeCategory">
-      <div class="skill-card" *ngFor="let skill of getActiveSkills()">
+      <div class="skill-card" [class.high-level]="skill.level && skill.level > 80" *ngFor="let skill of getActiveSkills()">
         <div class="skill-header">
           <i class="{{ skill.icon }}"></i>
-          <h3 class="skill-name">{{ skill.name }}</h3>
-          <span class="skill-level {{ getSkillLevelClass(skill.level) }}">
-            {{ getSkillLevelClass(skill.level) | titlecase }}
+          <h3 class="skill-name">{{ skill.name }}
+            <span class="skill-badge basic" *ngIf="skill.level && skill.level <= 30">Basic</span>
+          </h3>
+        </div>
+        
+        <!-- Tags -->
+        <div class="skill-tags" *ngIf="skill.tags && skill.tags.length">
+          <span 
+            *ngFor="let tag of skill.tags" 
+            class="skill-tag {{ tag.class }}"
+          >
+            {{ tag.name }}
           </span>
-        </div>
-        
-        <!-- Progress Bar -->
-        <div class="skill-progress">
-          <div 
-            class="progress-bar" 
-            [style.width.%]="skill.level"
-            [ngClass]="getSkillLevelClass(skill.level)"
-          ></div>
-          <span class="skill-percentage">{{ skill.level }}%</span>
-        </div>
-        
-        <!-- Skill Tags -->
-        <div class="skill-tags">
-          <div class="skill-tag" *ngFor="let tag of skill.tags" [ngClass]="tag.class">
-            <i class="fas fa-tag"></i>
-            <span>{{ tag.name }}</span>
-          </div>
         </div>
       </div>
     </div>

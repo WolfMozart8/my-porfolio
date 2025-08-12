@@ -36,7 +36,7 @@
         },
         { 
           "name": "C#", 
-          "level": 75, 
+          "level": 25, 
           "icon": "fa-solid fa-c",
           "tags": [
             { "name": "Backend", "class": "tag-backend" },

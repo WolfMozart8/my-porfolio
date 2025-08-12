@@ -11,7 +11,7 @@ export interface SkillTag {
 
 export interface Skill {
   name: string;
-  level: number;
+  level?: number;
   icon?: string;
   tags: SkillTag[];
 }
@@ -118,8 +118,8 @@ export class SkillsComponent implements OnInit, OnDestroy {
         }
       });
       
-      // Return skills sorted by level
-      this.filteredSkills = foundSkills.sort((a, b) => b.level - a.level);
+      // Return all skills
+      this.filteredSkills = [...foundSkills];
       return;
     }
     
@@ -130,13 +130,6 @@ export class SkillsComponent implements OnInit, OnDestroy {
   getActiveSkills(): Skill[] {
     if (!this.activeCategory) return [];
     return this.filteredSkills;
-  }
-
-  getSkillLevelClass(level: number): string {
-    if (level >= 85) return 'expert';
-    if (level >= 70) return 'advanced';
-    if (level >= 55) return 'intermediate';
-    return 'beginner';
   }
 
   // Generate random tags for a skill
