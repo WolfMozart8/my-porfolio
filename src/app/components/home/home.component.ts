@@ -21,8 +21,11 @@ import { RouterLink } from '@angular/router';
 })
 export class HomeComponent implements OnInit, OnDestroy {
   // Text content that can be updated based on language
-  yourName = '[Your Name]';
-  yourLocation = '[Your Location]';
+  name = 'Felipe Ríos';
+  location = 'Santiago, Chile';
+  email = 'feliperiosorellana@gmail.com';
+  linkedin = 'https://www.linkedin.com/in/felipe-rios-77a169249/';
+  github = 'https://github.com/WolfMozart8';
   
   // Terminal animation properties
   terminalLines: string[] = [];
@@ -55,12 +58,12 @@ export class HomeComponent implements OnInit, OnDestroy {
     
     if (currentLang === 'es') {
       this.terminalLines = [
-        '¡Hola, soy [Tu Nombre]',
+        '¡Hola, soy Felipe Ríos',
         'Desarrollador Full Stack y Entusiasta de la Tecnología'
       ];
     } else {
       this.terminalLines = [
-        'Hello, I\'m [Your Name]',
+        'Hello, I\'m Felipe Ríos',
         'Full Stack Developer & Tech Enthusiast'
       ];
     }

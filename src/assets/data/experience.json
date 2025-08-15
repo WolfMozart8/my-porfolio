@@ -2,45 +2,47 @@
   "experiences": {
     "en": [
       {
-        "title": "Senior Developer",
-        "company": "Tech Solutions Inc.",
-        "period": "2020 - Present",
+        "title": "Web Developer",
+        "company": "Xcommerce",
+        "period": "2022 - 2024",
         "description": [
-          "Developed and maintained multiple web applications using Angular and Node.js",
-          "Led a team of 5 developers in implementing new features and improving performance",
-          "Reduced application load time by 40% through code optimization"
+          "Maintenance of CMS platform with Laravel and Vue.js",
+          "Integration of RESTful APIs and implementation of backend features with Laravel",
+          "Code refactoring",
+          "Creation of new features both in the frontend and backend"
         ]
       },
       {
-        "title": "Frontend Developer",
-        "company": "Digital Creations",
-        "period": "2018 - 2020",
+        "title": "Full Stack Developer",
+        "company": "Freelance / Personal Projects",
+        "period": "2022 - Present",
         "description": [
-          "Built responsive user interfaces using React and TypeScript",
-          "Collaborated with designers to implement pixel-perfect UIs",
-          "Improved application accessibility to meet WCAG 2.1 standards"
+          "Built web applications using Angular and Spring Boot",
+          "Applied object-oriented programming principles to design maintainable code",
+          "Collaborated with clients to define requirements and deliver tailored solutions"
         ]
       }
     ],
     "es": [
       {
-        "title": "Desarrollador Senior",
-        "company": "Tech Solutions Inc.",
-        "period": "2020 - Presente",
+        "title": "Desarrollador Web",
+        "company": "Xcommerce",
+        "period": "2024 - Presente",
         "description": [
-          "Desarrollé y mantuve múltiples aplicaciones web utilizando Angular y Node.js",
-          "Lideré un equipo de 5 desarrolladores en la implementación de nuevas características y mejora del rendimiento",
-          "Reduje el tiempo de carga de la aplicación en un 40% mediante optimización de código"
+          "Mantenimiento de plataforma CMS con Laravel y Vue.js",
+          "Integración de APIs RESTful e implementación de funcionalidades de backend con Laravel",
+          "Refactorización de código",
+          "Creación de nuevas funcionalidades que tanto en el frontend como en el backend"
         ]
       },
       {
-        "title": "Desarrollador Frontend",
-        "company": "Digital Creations",
-        "period": "2018 - 2020",
+        "title": "Desarrollador Full Stack",
+        "company": "Freelance / Proyectos Personales",
+        "period": "2022 - 2024",
         "description": [
-          "Construí interfaces de usuario responsivas usando React y TypeScript",
-          "Colaboré con diseñadores para implementar interfaces de usuario perfectas",
-          "Mejoré la accesibilidad de la aplicación para cumplir con los estándares WCAG 2.1"
+          "Contrucción de aplicaciones web usando Angular y Spring Boot",
+          "Aplicación de principios de programación orientada a objetos para diseñar código mantenible",
+          "Colaboración con clientes para definir requisitos y entregar soluciones a medida"
         ]
       }
     ]

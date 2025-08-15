@@ -13,7 +13,7 @@
     <!-- <div class="terminal-display">
       <pre class="typing-animation" [innerHTML]="displayText | terminalFormatter"></pre>
     </div> -->
-    <h1 class="greeting">{{ 'GREETING' | translate }} <span class="highlight">{{ yourName }}</span></h1>
+    <h1 class="greeting">{{ 'GREETING' | translate }} <span class="highlight">{{ name }}</span></h1>
     <h2 class="tagline">{{ 'TAGLINE' | translate }}</h2>
     <p class="intro">{{ 'WELCOME' | translate }}</p>
   </div>
@@ -56,7 +56,7 @@
     </div>
     <div class="status-item">
       <i class="fas fa-map-marker-alt"></i>
-      <span>{{ 'LOCATION' | translate: { location: yourLocation } }}</span>
+      <span>{{ 'LOCATION' | translate: { location: location } }}</span>
     </div>
   </div>
 
@@ -68,15 +68,15 @@
   <div class="terminal-line output connect-links">
     <p>{{ 'CONTACT_ME' | translate }}</p>
     <div class="social-links">
-      <a href="mailto:your.email@example.com" class="social-link" target="_blank">
+      <a href="mailto:{{ email }}" class="social-link" target="_blank">
         <i class="fas fa-envelope"></i>
         <span>{{ 'EMAIL_ME' | translate }}</span>
       </a>
-      <a href="https://github.com/yourusername" class="social-link" target="_blank">
+      <a href="https://github.com/{{ github }}" class="social-link" target="_blank">
         <i class="fab fa-github"></i>
         <span>{{ 'GITHUB' | translate }}</span>
       </a>
-      <a href="https://linkedin.com/in/yourusername" class="social-link" target="_blank">
+      <a href="https://linkedin.com/in/{{ linkedin }}" class="social-link" target="_blank">
         <i class="fab fa-linkedin-in"></i>
         <span>{{ 'LINKEDIN' | translate }}</span>
       </a>

@@ -1,63 +1,64 @@
 {
   "projects": [
     {
-      "id": "3d-portfolio",
+      "id": "foro-alura",
       "en": {
-        "name": "3D Portfolio",
-        "description": "A modern 3D portfolio website built with Three.js and Angular, featuring interactive 3D models and animations."
+        "name": "Alura Forum",
+        "description": "A full-stack forum with Angular and Spring boot. Includes authentication, topic and response creation, JWT and security."
       },
       "es": {
-        "name": "Portafolio 3D",
-        "description": "Un sitio web de portafolio 3D moderno construido con Three.js y Angular, que incluye modelos 3D interactivos y animaciones."
+        "name": "Foro Alura",
+        "description": "Un foro full-stack con Angular y Spring boot. incluye funcionalidades de autenticación, creación de temas y respuestas, ademas de JWT y seguridad"
       },
-      "technologies": ["Angular", "Three.js", "TypeScript", "SCSS"],
-      "github": "https://github.com/yourusername/3d-portfolio",
-      "demo": "https://yourusername.github.io/3d-portfolio",
-      "image": "assets/images/projects/3d-portfolio-preview.jpg"
+      "technologies": ["Angular", "Spring boot", "TypeScript", "Tailwind", "MySQL", "JWT", "Docker"],
+      "github": "https://github.com/WolfMozart8/foro-alura-fullstack",
+      "demo": "",
+      "image": "assets/images/projects/foro-alura-preview.png"
     },
     {
-      "id": "ecommerce-platform",
+      "id": "pixel-me",
       "en": {
-        "name": "E-commerce Platform",
-        "description": "A full-stack e-commerce platform with user authentication, product catalog, and payment integration."
+        "name": "Pixel Me",
+        "description": "A web application to convert images to pixel art. It was especially designed for hama beads."
       },
       "es": {
-        "name": "Plataforma de Comercio Electrónico",
-        "description": "Una plataforma de comercio electrónico full-stack con autenticación de usuarios, catálogo de productos e integración de pagos."
+        "name": "Pixel Me",
+        "description": "Aplicación web para convertir imágenes a pixel art. Se diseñó especialmente para hama beads."
       },
-      "technologies": ["Node.js", "Express", "MongoDB", "Angular", "Stripe"],
-      "github": "https://github.com/yourusername/ecommerce-platform",
-      "image": "assets/images/projects/ecommerce-preview.png"
+      "technologies": ["Angular", "TypeScript", "Tailwind", "Material-UI"],
+      "github": "https://github.com/WolfMozart8/pixel-me",
+      "demo": "https://pixel-mew.netlify.app/",
+      "image": "assets/images/projects/pixel-me-preview.png"
     },
     {
-      "id": "task-management-app",
+      "id": "eccomerce-product-page",
       "en": {
-        "name": "Task Management App",
-        "description": "A collaborative task management application with real-time updates and team collaboration features."
+        "name": "E-commerce Product Page",
+        "description": "An e-commerce product page with shopping cart functionality."
       },
       "es": {
-        "name": "Aplicación de Gestión de Tareas",
-        "description": "Una aplicación colaborativa de gestión de tareas con actualizaciones en tiempo real y funciones de trabajo en equipo."
+        "name": "Página de Producto de E-commerce",
+        "description": "Página de producto de e-commerce, con funcionalidades de carrito de compras."
       },
-      "technologies": ["React", "Firebase", "Redux", "Material-UI"],
-      "github": "https://github.com/yourusername/task-management-app",
-      "demo": "https://taskapp.yourdomain.com",
-      "image": "assets/images/projects/task-manager-preview.png"
+      "technologies": ["Angular", "TypeScript", "Tailwind"],
+      "github": "https://github.com/WolfMozart8/ecommerce-angular",
+      "demo": "https://wolfmozart8.github.io/ecommerce-angular/",
+      "image": "assets/images/projects/eccomerce-product-page-preview.jpeg"
     },
     {
-      "id": "weather-dashboard",
+      "id": "trading-dashboard",
       "en": {
-        "name": "Weather Dashboard",
-        "description": "A weather application that displays current weather and forecast using a weather API."
+        "name": "Trading Dashboard",
+        "description": "A trading dashboard application that displays prices and forecast using a json file."
       },
       "es": {
-        "name": "Panel del Tiempo",
-        "description": "Una aplicación meteorológica que muestra el clima actual y el pronóstico utilizando una API del tiempo."
+        "name": "Panel de Trading",
+        "description": "Una aplicación de panel de trading que muestra precios y pronóstico utilizando un archivo json."
       },
-      "technologies": ["JavaScript", "HTML5", "CSS3", "OpenWeather API"],
-      "github": "https://github.com/yourusername/weather-dashboard",
-      "demo": "https://weather.yourdomain.com",
-      "image": "assets/images/projects/weather-dashboard-preview.png"
+      "technologies": ["Vue.js", "TypeScript", "JSON"],
+      "github": "https://github.com/WolfMozart8/prueba-vuejs",
+      "demo": "https://wolfmozart8.github.io/prueba-vuejs/",
+      "image": "assets/images/projects/trading-dashboard-preview.jpeg"
     }
   ]
 }

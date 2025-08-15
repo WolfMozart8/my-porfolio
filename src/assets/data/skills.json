@@ -1,195 +1,273 @@
 {
   "skillCategories": [
     {
-      "name": "languages",
-      "icon": "fa-code",
+      "name": "Frontend",
+      "icon": "fa-solid fa-desktop",
       "skills": [
-        { 
-          "name": "TypeScript", 
-          "level": 90, 
-          "icon": "fa-brands fa-js", 
+        {
+          "name": "Vue.js (+Vuex)",
+          "level": 90,
+          "icon": "fa-brands fa-vuejs",
           "tags": [
-            { "name": "Frontend", "class": "tag-frontend" },
-            { "name": "Web Dev", "class": "tag-web" },
-            { "name": "Full Stack", "class": "tag-fullstack" }
+            { "name": "Profesional", "class": "tag-pro" },
+            { "name": "Framework", "class": "tag-framework" },
+            { "name": "Frontend", "class": "tag-frontend" }
           ]
         },
-        { 
-          "name": "Python", 
-          "level": 85, 
-          "icon": "fa-brands fa-python",
-          "tags": [
-            { "name": "Backend", "class": "tag-backend" },
-            { "name": "Automation", "class": "tag-auto" },
-            { "name": "AI/ML", "class": "tag-ai" }
-          ]
-        },
-        { 
-          "name": "Java", 
-          "level": 80, 
-          "icon": "fa-brands fa-java",
-          "tags": [
-            { "name": "Backend", "class": "tag-backend" },
-            { "name": "Enterprise", "class": "tag-enterprise" },
-            { "name": "Microservices", "class": "tag-micro" }
-          ]
-        },
-        { 
-          "name": "C#", 
-          "level": 25, 
-          "icon": "fa-solid fa-c",
-          "tags": [
-            { "name": "Backend", "class": "tag-backend" },
-            { "name": "Desktop", "class": "tag-desktop" },
-            { "name": "Game Dev", "class": "tag-game" }
-          ]
-        },
-        { 
-          "name": "SQL", 
-          "level": 85, 
-          "icon": "fa-solid fa-database",
-          "tags": [
-            { "name": "Databases", "class": "tag-db" },
-            { "name": "Backend", "class": "tag-backend" },
-            { "name": "Data", "class": "tag-data" }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "frontend",
-      "icon": "fa-desktop",
-      "skills": [
-        { 
-          "name": "Angular", 
-          "level": 90, 
+        {
+          "name": "Angular",
+          "level": 80,
           "icon": "fa-brands fa-angular",
           "tags": [
             { "name": "Framework", "class": "tag-framework" },
             { "name": "SPA", "class": "tag-spa" },
-            { "name": "TypeScript", "class": "tag-typescript" }
+            { "name": "Frontend", "class": "tag-frontend" }
           ]
         },
-        { 
-          "name": "React", 
-          "level": 85, 
-          "icon": "fa-brands fa-react",
-          "tags": [
-            { "name": "Library", "class": "tag-lib" },
-            { "name": "UI", "class": "tag-ui" },
-            { "name": "JavaScript", "class": "tag-js" }
-          ]
-        },
-        { 
-          "name": "Vue.js", 
-          "level": 80, 
-          "icon": "fa-brands fa-vuejs",
+        {
+          "name": "AngularJS (Old)",
+          "level": 40,
+          "icon": "fa-brands fa-angular",
           "tags": [
             { "name": "Framework", "class": "tag-framework" },
-            { "name": "Progressive", "class": "tag-prog" },
-            { "name": "UI", "class": "tag-ui" }
+            { "name": "Frontend", "class": "tag-frontend" }
           ]
         },
-        { 
-          "name": "HTML5 & CSS3", 
-          "level": 95, 
+        {
+          "name": "TypeScript",
+          "level": 85,
+          "icon": "fa-solid fa-code",
+          "tags": [
+            { "name": "Lenguaje", "class": "tag-lang" },
+            { "name": "Frontend", "class": "tag-frontend" },
+            { "name": "Tipado", "class": "tag-types" }
+          ]
+        },
+        {
+          "name": "JavaScript (ES6+)",
+          "level": 95,
+          "icon": "fa-brands fa-js",
+          "tags": [
+            { "name": "Lenguaje", "class": "tag-lang" },
+            { "name": "Web", "class": "tag-web" },
+            { "name": "Core", "class": "tag-core" }
+          ]
+        },
+        {
+          "name": "HTML5 & CSS3",
+          "level": 95,
           "icon": "fa-brands fa-html5",
           "tags": [
             { "name": "Markup", "class": "tag-markup" },
-            { "name": "Styling", "class": "tag-style" },
-            { "name": "Web", "class": "tag-web" }
+            { "name": "Styles", "class": "tag-style" },
+            { "name": "Core", "class": "tag-core" }
+          ]
+        },
+        {
+          "name": "TailwindCSS",
+          "level": 90,
+          "icon": "fa-solid fa-wind",
+          "tags": [
+            { "name": "CSS", "class": "tag-style" },
+            { "name": "Framework", "class": "tag-framework" },
+            { "name": "Utility-First", "class": "tag-utility" }
+          ]
+        },
+        {
+          "name": "Sass",
+          "level": 85,
+          "icon": "fa-brands fa-sass",
+          "tags": [
+            { "name": "CSS", "class": "tag-style" },
+            { "name": "Preprocesador", "class": "tag-pre" }
+          ]
+        },
+        {
+          "name": "React",
+          "level": 65,
+          "icon": "fa-brands fa-react",
+          "tags": [
+            { "name": "Librería", "class": "tag-lib" },
+            { "name": "UI", "class": "tag-ui" },
+            { "name": "Frontend", "class": "tag-frontend" }
+          ]
+        },
+        {
+          "name": "Three.js",
+          "level": 40,
+          "icon": "fa-solid fa-cube",
+          "tags": [
+            { "name": "WebGL", "class": "tag-webgl" },
+            { "name": "3D", "class": "tag-3d" },
+            { "name": "Básico", "class": "tag-basic" }
+          ]
+        },
+        {
+          "name": "Bootstrap",
+          "level": 90,
+          "icon": "fa-brands fa-bootstrap",
+          "tags": [
+            { "name": "CSS", "class": "tag-style" },
+            { "name": "Framework", "class": "tag-framework" },
+            { "name": "UI", "class": "tag-ui" }
           ]
         }
       ]
     },
     {
-      "name": "backend",
-      "icon": "fa-server",
+      "name": "Backend",
+      "icon": "fa-solid fa-server",
       "skills": [
-        { 
-          "name": "Node.js", 
-          "level": 88, 
+        {
+          "name": "Laravel",
+          "level": 80,
+          "icon": "fa-brands fa-laravel",
+          "tags": [
+            { "name": "Profesional", "class": "tag-pro" },
+            { "name": "Framework", "class": "tag-framework" },
+            { "name": "Backend", "class": "tag-backend" }
+          ]
+        },
+        {
+          "name": "Spring Boot",
+          "level": 70,
+          "icon": "fa-solid fa-leaf",
+          "tags": [
+            { "name": "Java", "class": "tag-java" },
+            { "name": "Framework", "class": "tag-framework" },
+            { "name": "Backend", "class": "tag-backend" }
+          ]
+        },
+        {
+          "name": "MySQL",
+          "level": 85,
+          "icon": "fa-solid fa-database",
+          "tags": [
+            { "name": "BBDD", "class": "tag-db" },
+            { "name": "SQL", "class": "tag-sql" },
+            { "name": "Backend", "class": "tag-backend" }
+          ]
+        },
+        {
+          "name": "Node.js",
+          "level": 45,
           "icon": "fa-brands fa-node-js",
           "tags": [
             { "name": "Runtime", "class": "tag-runtime" },
-            { "name": "JavaScript", "class": "tag-js" },
-            { "name": "API", "class": "tag-api" }
+            { "name": "Backend", "class": "tag-backend" },
+            { "name": "Básico", "class": "tag-basic" }
           ]
         },
-        { 
-          "name": "Express", 
-          "level": 85, 
-          "icon": "fa-bolt",
-          "tags": [
-            { "name": "Framework", "class": "tag-framework" },
-            { "name": "API", "class": "tag-api" },
-            { "name": "Middleware", "class": "tag-middleware" }
-          ]
-        },
-        { 
-          "name": "Django", 
-          "level": 78, 
+        {
+          "name": "Python",
+          "level": 60,
           "icon": "fa-brands fa-python",
           "tags": [
-            { "name": "Framework", "class": "tag-framework" },
-            { "name": "Python", "class": "tag-python" },
-            { "name": "Full Stack", "class": "tag-fullstack" }
-          ]
-        },
-        { 
-          "name": "Spring Boot", 
-          "level": 75, 
-          "icon": "fa-leaf",
-          "tags": [
-            { "name": "Framework", "class": "tag-framework" },
-            { "name": "Java", "class": "tag-java" },
-            { "name": "Microservices", "class": "tag-micro" }
+            { "name": "Lenguaje", "class": "tag-lang" },
+            { "name": "Scripting", "class": "tag-scripting" },
+            { "name": "Backend", "class": "tag-backend" }
           ]
         }
       ]
     },
     {
-      "name": "devops",
-      "icon": "fa-network-wired",
+      "name": "DevOps & Tools",
+      "icon": "fa-solid fa-wrench",
       "skills": [
-        { 
-          "name": "Docker", 
-          "level": 82, 
+        {
+          "name": "Git",
+          "level": 90,
+          "icon": "fa-brands fa-git-alt",
+          "tags": [
+            { "name": "Version Control", "class": "tag-vcs" },
+            { "name": "Core", "class": "tag-core" },
+            { "name": "Tool", "class": "tag-tool" }
+          ]
+        },
+        {
+          "name": "Docker",
+          "level": 30,
           "icon": "fa-brands fa-docker",
           "tags": [
-            { "name": "Containers", "class": "tag-container" },
-            { "name": "Virtualization", "class": "tag-virt" },
-            { "name": "DevOps", "class": "tag-devops" }
+            { "name": "Container", "class": "tag-container" },
+            { "name": "DevOps", "class": "tag-devops" },
+            { "name": "Basic", "class": "tag-basic" }
           ]
         },
-        { 
-          "name": "Kubernetes", 
-          "level": 70, 
-          "icon": "fa-ship",
+        {
+          "name": "Jenkins",
+          "level": 20,
+          "icon": "fa-brands fa-jenkins",
           "tags": [
-            { "name": "Orchestration", "class": "tag-orch" },
-            { "name": "Cloud", "class": "tag-cloud" },
-            { "name": "Scaling", "class": "tag-scale" }
+            { "name": "CI/CD", "class": "tag-ci" },
+            { "name": "Automation", "class": "tag-auto" },
+            { "name": "Basic", "class": "tag-basic" }
           ]
         },
-        { 
-          "name": "AWS", 
-          "level": 75, 
+        {
+          "name": "Linux (CLI)",
+          "level": 60,
+          "icon": "fa-brands fa-linux",
+          "tags": [
+            { "name": "OS", "class": "tag-os" },
+            { "name": "Tool", "class": "tag-tool" },
+            { "name": "Server", "class": "tag-server" }
+          ]
+        },
+        {
+          "name": "AWS",
+          "level": 20,
           "icon": "fa-brands fa-aws",
           "tags": [
             { "name": "Cloud", "class": "tag-cloud" },
-            { "name": "Infrastructure", "class": "tag-infra" },
-            { "name": "Services", "class": "tag-services" }
+            { "name": "IaaS", "class": "tag-iaas" },
+            { "name": "Basic", "class": "tag-basic" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Game Development",
+      "icon": "fa-solid fa-gamepad",
+      "skills": [
+        {
+          "name": "Unity",
+          "level": 20,
+          "icon": "fa-brands fa-unity",
+          "tags": [
+            { "name": "Game Engine", "class": "tag-engine" },
+            { "name": "3D", "class": "tag-3d" },
+            { "name": "Basic", "class": "tag-basic" }
           ]
         },
-        { 
-          "name": "CI/CD", 
-          "level": 80, 
-          "icon": "fa-solid fa-arrows-rotate",
+        {
+          "name": "C#",
+          "level": 30,
+          "icon": "fa-solid fa-c",
           "tags": [
-            { "name": "Automation", "class": "tag-auto" },
-            { "name": "DevOps", "class": "tag-devops" },
-            { "name": "Pipelines", "class": "tag-pipeline" }
+            { "name": "Game Dev", "class": "tag-gamedev" },
+            { "name": "Language", "class": "tag-lang" },
+            { "name": "Basic", "class": "tag-basic" }
+          ]
+        },
+        {
+          "name": "Godot",
+          "level": 30,
+          "icon": "fa-solid fa-robot",
+          "tags": [
+            { "name": "Game Engine", "class": "tag-engine" },
+            { "name": "2D", "class": "tag-2d" },
+            { "name": "Basic", "class": "tag-basic" }
+          ]
+        },
+        {
+          "name": "GDScript",
+          "level": 30,
+          "icon": "fa-solid fa-scroll",
+          "tags": [
+            { "name": "Game Dev", "class": "tag-gamedev" },
+            { "name": "Scripting", "class": "tag-scripting" },
+            { "name": "Basic", "class": "tag-basic" }
           ]
         }
       ]

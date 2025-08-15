@@ -35,7 +35,7 @@
     
     <!-- Skills Grid -->
     <div class="skills-grid" *ngIf="activeCategory">
-      <div class="skill-card" [class.high-level]="skill.level && skill.level > 80" *ngFor="let skill of getActiveSkills()">
+      <div class="skill-card" [class.high-level]="skill.level && skill.level >= 80" *ngFor="let skill of getActiveSkills()">
         <div class="skill-header">
           <i class="{{ skill.icon }}"></i>
           <h3 class="skill-name">{{ skill.name }}

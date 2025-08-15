@@ -28,9 +28,12 @@ type Education = {
 })
 export class AboutComponent implements OnInit, OnDestroy {
   aboutTexts = {
-    en: `Hello! I'm [Your Name], a passionate developer with a love for creating beautiful and functional applications. With several years of experience in the tech industry, I specialize in building modern web applications using cutting-edge technologies.`,
-    es: `¡Hola! Soy [Tu Nombre], un desarrollador apasionado por crear aplicaciones hermosas y funcionales. Con varios años de experiencia en la industria tecnológica, me especializo en construir aplicaciones web modernas utilizando tecnologías de vanguardia.`
-  };
+    en: `I’m Felipe Ríos, a Full Stack Developer with solid experience in building modern, well-structured web applications. I’m passionate about turning ideas into functional digital solutions, paying attention to both the internal architecture and the user experience.
+I see myself as a curious and constantly learning person, always seeking new ways to optimize processes and solve problems creatively. I’ve worked on projects ranging from business logic to dynamic interfaces, adapting to different environments and needs.
+Outside of coding, I enjoy learning new languages and exploring technology from different perspectives, always aiming to grow both personally and professionally.`,
+    es: `Soy Felipe Ríos, desarrollador Full Stack con una sólida experiencia en la creación de aplicaciones web modernas y bien estructuradas. Me apasiona transformar ideas en soluciones digitales funcionales, cuidando tanto la arquitectura interna como la experiencia del usuario.
+Me considero una persona curiosa y en constante aprendizaje, siempre buscando nuevas formas de optimizar procesos y resolver problemas de manera creativa. He trabajado en proyectos que abarcan desde la lógica de negocio hasta interfaces dinámicas, adaptándome a diferentes entornos y necesidades.
+Fuera del código, disfruto aprender nuevos idiomas y explorar la tecnología desde distintas perspectivas, siempre con el objetivo de seguir creciendo personal y profesionalmente..`};
   
   aboutText = this.aboutTexts['en'];
   experiences: Experience[] = [];

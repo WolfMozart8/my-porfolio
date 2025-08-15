@@ -11,7 +11,7 @@ export class TranslatePipe implements PipeTransform {
     en: {
       'GREETING': 'Hello, I\'m',
       'TAGLINE': 'Full Stack Developer & Problem Solver',
-      'WELCOME': 'Welcome to my digital portfolio! I build exceptional digital experiences with modern web technologies.',
+      'WELCOME': 'Welcome to my digital portfolio! I’m passionate about building modern, functional, and well-crafted web experiences, paying attention to every detail from the logic to the interface. I’m always looking to learn, improve, and find creative solutions to any challenge.',
       'ABOUT_ME': 'About Me',
       'PROJECTS': 'Projects',
       'SKILLS': 'Skills',
@@ -27,7 +27,7 @@ export class TranslatePipe implements PipeTransform {
     es: {
       'GREETING': '¡Hola, soy',
       'TAGLINE': 'Desarrollador Full Stack y Resolvedor de Problemas',
-      'WELCOME': '¡Bienvenido a mi portafolio digital! Construyo experiencias digitales excepcionales con tecnologías web modernas.',
+      'WELCOME': '¡Bienvenido a mi portafolio digital! Me apasiona crear experiencias web modernas, funcionales y bien pensadas, cuidando cada detalle desde la lógica hasta la interfaz. Siempre busco aprender, mejorar y encontrar soluciones creativas a cualquier desafío.',
       'ABOUT_ME': 'Sobre Mí',
       'PROJECTS': 'Proyectos',
       'SKILLS': 'Habilidades',
