@@ -11,7 +11,7 @@
       
       <div class="contact-methods">
         <!-- Contact Form -->
-        <form (ngSubmit)="onSubmit()" #contactFormRef="ngForm" class="contact-form">
+        <form *ngIf="emailContactForm" (ngSubmit)="onSubmit()" #contactFormRef="ngForm" class="contact-form">
           <div class="form-group">
             <label for="name">{{ translations.form?.name || 'NAME' }}</label>
             <input 
@@ -66,7 +66,7 @@
         
         <!-- Social Links -->
         <div class="social-links">
-          <h3>{{ translations.form?.orFindMe || 'OR FIND ME HERE' }}</h3>
+          <h3 *ngIf="emailContactForm">{{ translations.form?.orFindMe || 'OR FIND ME HERE' }}</h3>
           <div class="social-grid">
             <a 
               *ngFor="let social of socialLinks" 

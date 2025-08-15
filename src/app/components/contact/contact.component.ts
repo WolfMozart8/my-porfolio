@@ -21,6 +21,8 @@ interface SocialLink {
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent implements OnInit, OnDestroy {
+  emailContactForm: boolean = false;
+  
   translations: any = {};
   private langChangeSubscription: Subscription;
   currentLanguage: string = 'en';
@@ -33,27 +35,27 @@ export class ContactComponent implements OnInit, OnDestroy {
   socialLinks: SocialLink[] = [
     {
       name: 'GitHub',
-      url: 'https://github.com/yourusername',
+      url: 'https://github.com/WolfMozart8',
       icon: 'fab fa-github',
-      username: 'yourusername'
+      username: 'WolfMozart8'
     },
     {
       name: 'LinkedIn',
-      url: 'https://linkedin.com/in/yourusername',
+      url: 'https://www.linkedin.com/in/felipe-rios-77a169249/',
       icon: 'fab fa-linkedin',
-      username: 'yourusername'
+      username: 'Felipe Ríos'
     },
-    {
-      name: 'Twitter',
-      url: 'https://twitter.com/yourusername',
-      icon: 'fab fa-twitter',
-      username: '@yourusername'
-    },
+    // {
+    //   name: 'Twitter',
+    //   url: 'https://twitter.com/yourusername',
+    //   icon: 'fab fa-twitter',
+    //   username: '@yourusername'
+    // },
     {
       name: 'Email',
-      url: 'mailto:your.email@example.com',
+      url: 'mailto:feliperiosorellana@gmail.com',
       icon: 'fas fa-envelope',
-      username: 'your.email@example.com'
+      username: 'Email'
     }
   ];
 

@@ -20,7 +20,7 @@
 
   <!-- Quick Navigation -->
   <div class="terminal-line">
-    <span class="prompt">visitor&#64;portfolio:~$</span>
+    <span class="prompt">user&#64;portfolio:~$</span>
     <span class="command">./navigate.sh</span>
   </div>
   <div class="terminal-line output nav-links">
@@ -46,7 +46,7 @@
 
   <!-- Quick Status -->
   <div class="terminal-line">
-    <span class="prompt">visitor&#64;portfolio:~$</span>
+    <span class="prompt">user&#64;portfolio:~$</span>
     <span class="command">status</span>
   </div>
   <div class="terminal-line output status">
@@ -62,7 +62,7 @@
 
   <!-- Quick Connect -->
   <div class="terminal-line">
-    <span class="prompt">visitor&#64;portfolio:~$</span>
+    <span class="prompt">user&#64;portfolio:~$</span>
     <span class="command">./connect.sh</span>
   </div>
   <div class="terminal-line output connect-links">
@@ -72,11 +72,11 @@
         <i class="fas fa-envelope"></i>
         <span>{{ 'EMAIL_ME' | translate }}</span>
       </a>
-      <a href="https://github.com/{{ github }}" class="social-link" target="_blank">
+      <a href="{{ github }}" class="social-link" target="_blank">
         <i class="fab fa-github"></i>
         <span>{{ 'GITHUB' | translate }}</span>
       </a>
-      <a href="https://linkedin.com/in/{{ linkedin }}" class="social-link" target="_blank">
+      <a href="{{ linkedin }}" class="social-link" target="_blank">
         <i class="fab fa-linkedin-in"></i>
         <span>{{ 'LINKEDIN' | translate }}</span>
       </a>
@@ -85,7 +85,7 @@
 
   <!-- Terminal Cursor -->
   <div class="terminal-line">
-    <span class="prompt">visitor&#64;portfolio:~$</span>
+    <span class="prompt">user&#64;portfolio:~$</span>
     <span class="cursor">_</span>
   </div>
 </app-terminal>
