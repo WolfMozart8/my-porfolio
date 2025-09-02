@@ -113,7 +113,7 @@ export class SkillsComponent implements OnInit, OnDestroy {
     if (this.activeCategory === "all") {
       const foundSkills: Skill[] = [];
       this.skillCategories.forEach(cat => {
-        if (cat.name !== "languages") {
+        if (cat.name !== "Languages") {
           foundSkills.push(...cat.skills);
         }
       });

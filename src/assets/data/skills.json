@@ -271,6 +271,48 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Languages",
+      "icon": "fa-solid fa-language",
+      "skills": [
+        {
+          "name": "Spanish",
+          "level": 100,
+          "icon": "fa-solid fa-flag",
+          "tags": [
+            { "name": "Language", "class": "tag-lang" },
+            { "name": "Native", "class": "tag-native" }
+          ]
+        },
+        {
+          "name": "English",
+          "level": 75,
+          "icon": "fa-solid fa-flag",
+          "tags": [
+            { "name": "Language", "class": "tag-lang" },
+            { "name": "Intermediate", "class": "tag-intermediate" }
+          ]
+        },
+        {
+          "name": "Japanese",
+          "level": 40,
+          "icon": "fa-solid fa-flag",
+          "tags": [
+            { "name": "Language", "class": "tag-lang" },
+            { "name": "Basic", "class": "tag-basic" }
+          ]
+        },
+        {
+          "name": "Chinese",
+          "level": 10,
+          "icon": "fa-solid fa-flag",
+          "tags": [
+            { "name": "Language", "class": "tag-lang" },
+            { "name": "Mega Basic", "class": "tag-basic" }
+          ]
+        }
+      ]
     }
   ]
 }
