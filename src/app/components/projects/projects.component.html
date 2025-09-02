@@ -6,7 +6,7 @@
   <div class="terminal-line output">
     <div class="projects-grid">
       <!-- Project Card 1 -->
-      <div class="project-card" *ngFor="let project of projects">
+      <div class="project-card" *ngFor="let project of displayedProjects">
         <div class="project-image-container" *ngIf="project.image">
           <img [src]="project.image" [alt]="project.name + ' preview'" class="project-image" loading="lazy">
           <div class="project-image-overlay"></div>
@@ -29,6 +29,11 @@
             {{ tech }}
           </span>
         </div>
+      </div>
+      <div class="load-more-container" *ngIf="showLoadMore">
+        <button (click)="loadMoreProjects()" class="load-more-button">
+          Show More
+        </button>
       </div>
     </div>
   </div>

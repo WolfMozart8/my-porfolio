@@ -43,8 +43,12 @@ interface ProjectsData {
 })
 export class ProjectsComponent implements OnInit, OnDestroy {
   projects: ProjectDisplay[] = [];
+  displayedProjects: ProjectDisplay[] = [];
   private languageSubscription: Subscription;
   private projectsData: Project[] = [];
+  private readonly projectsPerPage = 4;
+  private currentPage = 1;
+  showLoadMore = true;
 
   constructor(
     private languageService: LanguageService,
@@ -78,16 +82,29 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   }
 
   private updateProjectsLanguage(): void {
-    if (!this.projectsData) return;
-    
-    const currentLang = this.languageService.getCurrentLanguage();
-    this.projects = this.projectsData.map(project => ({
-      name: project[currentLang].name,
-      description: project[currentLang].description,
-      technologies: [...project.technologies],
-      github: project.github,
-      demo: project.demo,
-      image: project.image
-    }));
+    const lang = this.languageService.getCurrentLanguage() as 'en' | 'es';
+    this.projects = this.projectsData.map(project => {
+      const { en, es, ...rest } = project;
+      const langData = lang === 'en' ? en : es;
+      return {
+        ...langData,
+        technologies: project.technologies,
+        github: project.github,
+        demo: project.demo,
+        image: project.image
+      };
+    });
+    this.updateDisplayedProjects();
+  }
+
+  loadMoreProjects(): void {
+    this.currentPage++;
+    this.updateDisplayedProjects();
+  }
+
+  private updateDisplayedProjects(): void {
+    const endIndex = this.currentPage * this.projectsPerPage;
+    this.displayedProjects = this.projects.slice(0, endIndex);
+    this.showLoadMore = endIndex < this.projects.length;
   }
 }

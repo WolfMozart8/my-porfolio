@@ -48,6 +48,57 @@
     }
   }
   
+  .load-more-container {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 1rem 0;
+
+    .load-more-button {
+      background: rgba(51, 255, 51, 0.1);
+      color: #33ff33;
+      border: 1px solid #33ff33;
+      padding: 0.5rem 1.5rem;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(51, 255, 51, 0.2), transparent);
+        transition: 0.5s;
+        z-index: -1;
+      }
+
+      &:hover {
+        background: rgba(51, 255, 51, 0.2);
+        box-shadow: 0 0 10px rgba(51, 255, 51, 0.3);
+        transform: translateY(-2px);
+
+        &::before {
+          left: 100%;
+        }
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+  }
+
   .project-image-container {
     position: relative;
     width: 100%;
