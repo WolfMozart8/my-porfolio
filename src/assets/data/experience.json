@@ -6,7 +6,7 @@
         "company": "Xcommerce",
         "period": "2022 - 2024",
         "description": [
-          "Maintenance of CMS platform with Laravel and Vue.js",
+          "Maintenance of CMS platform with Laravel, Vue.js and AngularJs (legacy)",
           "Integration of RESTful APIs and implementation of backend features with Laravel",
           "Code refactoring",
           "Creation of new features both in the frontend and backend"
@@ -29,7 +29,7 @@
         "company": "Xcommerce",
         "period": "2024 - Presente",
         "description": [
-          "Mantenimiento de plataforma CMS con Laravel y Vue.js",
+          "Mantenimiento de plataforma CMS con Laravel, Vue.js y AngularJs (legacy)",
           "Integración de APIs RESTful e implementación de funcionalidades de backend con Laravel",
           "Refactorización de código",
           "Creación de nuevas funcionalidades que tanto en el frontend como en el backend"

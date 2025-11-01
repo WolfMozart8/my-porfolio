@@ -1,0 +1,51 @@
+<app-terminal terminalTitle="courses.sh">
+  <div class="terminal-line">
+    <span class="prompt">user&#64;portfolio:~$</span>
+    <span class="command">ls -la courses/</span>
+  </div>
+  <div class="terminal-line output">
+    <div class="courses-grid">
+      <!-- Course Card -->
+      <div class="course-card" *ngFor="let course of displayedCourses" [class.professional]="course.professional">
+        <div class="course-header">
+          <i [class]="getPlatformIcon(course.platform)"></i>
+          <h3 class="course-title">
+            {{ course.title }}
+            <span *ngIf="course.professional" class="professional-badge" [title]="'Professional Certification' | translate">
+              <i class="fas fa-award"></i>
+            </span>
+          </h3>
+          <div class="course-links">
+            <a *ngIf="course.certificateUrl" 
+               [href]="course.certificateUrl" 
+               target="_blank" 
+               class="course-link" 
+               title="View Certificate" 
+               (click)="$event.stopPropagation()">
+              <i class="fas fa-certificate"></i>
+            </a>
+          </div>
+        </div>
+        <div class="course-meta">
+          <div class="course-platform">
+            <i class="fas fa-laptop-code"></i>
+            <span>{{ course.platform }}</span>
+          </div>
+          <div class="course-year">
+            <i class="far fa-calendar-alt"></i>
+            <span>{{ course.year }}</span>
+          </div>
+          <div class="course-type" [class.certification]="course.type === 'certification'" [class.course]="course.type === 'course'">
+            <i [class]="course.type === 'certification' ? 'fas fa-award' : 'fas fa-graduation-cap'"></i>
+            <span>{{ course.type | titlecase }}</span>
+          </div>
+        </div>
+        <p class="course-description">{{ course.description }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="terminal-line">
+    <span class="prompt">user&#64;portfolio:~$</span>
+    <span class="cursor"></span>
+  </div>
+</app-terminal>

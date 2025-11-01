@@ -302,15 +302,6 @@
             { "name": "Language", "class": "tag-lang" },
             { "name": "Basic", "class": "tag-basic" }
           ]
-        },
-        {
-          "name": "Chinese",
-          "level": 10,
-          "icon": "fa-solid fa-flag",
-          "tags": [
-            { "name": "Language", "class": "tag-lang" },
-            { "name": "Mega Basic", "class": "tag-basic" }
-          ]
         }
       ]
     }

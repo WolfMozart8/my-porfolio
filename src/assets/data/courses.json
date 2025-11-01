@@ -1,0 +1,84 @@
+{
+  "courses": [
+    {
+      "id": "rhcsa",
+      "en": {
+        "title": "Red Hat Certified System Administrator (RHCSA)",
+        "description": "Fundamentals of Red Hat Linux and system administration."
+      },
+      "es": {
+        "title": "Red Hat Certified System Administrator (RHCSA)",
+        "description": "Fundamentos de Red Hat Linux y administración de sistemas."
+      },
+      "platform": "Red Hat",
+      "year": 2025,
+      "certificateUrl": "https://www.credly.com/badges/3a7b95ea-d358-4b2e-aeb1-d30e085988fb/public_url",
+      "professional": true,
+      "type": "certification"
+    },
+    {
+      "id": "aws-cloud-practitioner",
+      "en": {
+        "title": "AWS Cloud Fundamentals",
+        "description": "Fundamentals of AWS cloud services and cloud concepts."
+      },
+      "es": {
+        "title": "AWS Cloud Fundamentals",
+        "description": "Fundamentos de los servicios en la nube de AWS y conceptos de computación en la nube."
+      },
+      "platform": "Amazon Web Services",
+      "year": 2025,
+      "certificateUrl": "https://www.credly.com/badges/421c963a-10a9-44b4-bdec-9bfed814c0c1/public_url",
+      "professional": false,
+      "type": "course"
+    },
+    {
+      "id": "Red Hat System Administrator I",
+      "en": {
+        "title": "Red Hat System Administrator I",
+        "description": "Fundamentals of Red Hat Linux and system administration."
+      },
+      "es": {
+        "title": "Red Hat System Administrator I",
+        "description": "Fundamentos de Red Hat Linux y administración de sistemas."
+      },
+      "platform": "Red Hat",
+      "year": 2025,
+      "certificateUrl": "https://www.credly.com/badges/9bf4259c-a5a6-456b-bdfd-f37705ff6660/public_url",
+      "professional": false,
+      "type": "course"
+    },
+    {
+      "id": "Red Hat System Administrator II",
+      "en": {
+        "title": "Red Hat System Administrator II",
+        "description": "Fundamentals of Red Hat Linux and system administration."
+      },
+      "es": {
+        "title": "Red Hat System Administrator II",
+        "description": "Fundamentos de Red Hat Linux y administración de sistemas."
+      },
+      "platform": "Red Hat",
+      "year": 2025,
+      "certificateUrl": "https://www.credly.com/badges/4047886c-9804-49a6-b1bf-8865407ec915/public_url",
+      "professional": false,
+      "type": "course"
+    },
+    {
+      "id": "alura-backend",
+      "en": {
+        "title": "Oracle Next Education Backend",
+        "description": "Backend development with Spring Boot and Java."
+      },
+      "es": {
+        "title": "Oracle Next Education Backend",
+        "description": "Desarrollo de backend con Spring Boot y Java."
+      },
+      "platform": "Oracle + Alura Latam",
+      "year": 2023,
+      "certificateUrl": "https://app.aluracursos.com/user/riopipe8/fullCertificate/2070c0b8cf02639f22e039b6d85a6934",
+      "professional": false,
+      "type": "course"
+    }
+  ]
+}
