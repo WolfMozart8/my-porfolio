@@ -25,7 +25,7 @@
           ]
         },
         {
-          "name": "AngularJS (Old)",
+          "name": "AngularJS (Legacy)",
           "level": 40,
           "icon": "fa-brands fa-angular",
           "tags": [
@@ -149,6 +149,26 @@
           ]
         },
         {
+          "name": "MongoDB",
+          "level": 60,
+          "icon": "fa-solid fa-database",
+          "tags": [
+            { "name": "BBDD", "class": "tag-db" },
+            { "name": "NoSQL", "class": "tag-nosql" },
+            { "name": "Backend", "class": "tag-backend" }
+          ]
+        },
+        {
+          "name": "PostgreSQL",
+          "level": 50,
+          "icon": "fa-solid fa-database",
+          "tags": [
+            { "name": "BBDD", "class": "tag-db" },
+            { "name": "SQL", "class": "tag-sql" },
+            { "name": "Backend", "class": "tag-backend" }
+          ]
+        },
+        {
           "name": "Node.js",
           "level": 45,
           "icon": "fa-brands fa-node-js",
@@ -165,6 +185,26 @@
           "tags": [
             { "name": "Lenguaje", "class": "tag-lang" },
             { "name": "Scripting", "class": "tag-scripting" },
+            { "name": "Backend", "class": "tag-backend" }
+          ]
+        },
+        {
+          "name": "Next.js",
+          "level": 30,
+          "icon": "fa-brands fa-next-js",
+          "tags": [
+            { "name": "Framework", "class": "tag-framework" },
+            { "name": "SSR", "class": "tag-ssr" },
+            { "name": "Fullstack", "class": "tag-fullstack" }
+          ]
+        },
+        {
+          "name": "NestJS",
+          "level": 30,
+          "icon": "fa-solid fa-n",
+          "tags": [
+            { "name": "Framework", "class": "tag-framework" },
+            { "name": "Node.js", "class": "tag-node" },
             { "name": "Backend", "class": "tag-backend" }
           ]
         }
